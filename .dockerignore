@@ -1,0 +1,12 @@
+node_modules
+.svelte-kit
+build
+.git
+.env
+.env.*
+coverage
+*.log
+.DS_Store
+terraform
+test-results
+playwright-report
