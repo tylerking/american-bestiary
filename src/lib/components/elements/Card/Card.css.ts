@@ -9,7 +9,7 @@ const cardEnter = keyframes({
 
 export const root = style({
   '@media': {
-    '(max-width: 700px)': {
+    '(max-width: 1100px)': {
       flexDirection: 'column',
       minHeight: 'auto',
     },
@@ -38,7 +38,7 @@ export const root = style({
 
 export const imageWrapper = style({
   '@media': {
-    '(max-width: 700px)': {
+    '(max-width: 1100px)': {
       aspectRatio: '16 / 9',
       height: 'auto',
       width: '100%',
@@ -46,7 +46,7 @@ export const imageWrapper = style({
   },
   flexShrink: 0,
   overflow: 'hidden',
-  width: '200px',
+  width: '35%',
 })
 
 export const image = style({
@@ -68,7 +68,7 @@ export const content = style({
   flexDirection: 'column',
   gap: theme.spacing[3],
   justifyContent: 'center',
-  padding: `${theme.spacing[5]} ${theme.spacing[6]}`,
+  padding: `${theme.spacing[5]} ${theme.spacing[5]} ${theme.spacing[5]} ${theme.spacing[1]}`,
 })
 
 export const header = style({
@@ -95,7 +95,7 @@ export const stateLabel = style({
 })
 
 export const typeTag = style({
-  color: theme.colors.status.success,
+  color: theme.colors.map.brown,
 })
 
 export const descriptionClamping = style({

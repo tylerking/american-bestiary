@@ -177,9 +177,9 @@ export const creatures: CreatureData[] = [
     'ecology': 'Terrestrial environment in Illinois.',
     'etymology': 'Named for its manifestation in Enfield, Illinois.',
     'mythology': 'Witness reports triggered a massive influx of beer-swilling monster-hunters hoping to shoot the creature, forcing the local sheriff to request eyewitnesses stop telling their tales.',
-    'name': 'The Enfield Horror',
+    'name': 'Enfield Horror',
     'region': 'Illinois',
-    'visual': 'the-enfield-horror.png'
+    'visual': 'enfield-horror.png'
   },
   {
     'abstract': 'An exceptionally massive, Volkswagen-sized snapping turtle whose ability to remain submerged indefinitely has allowed it to easily evade town-wide capture efforts.',
@@ -225,9 +225,9 @@ export const creatures: CreatureData[] = [
     'ecology': 'Observed arriving via UFO to rural terrestrial environments, specifically the Sutton farmhouse in Kelly, Kentucky.',
     'etymology': 'Colloquially described as \'Space goblins\'. The \'green\' moniker was artificially added by national media, as original sightings described them as silver.',
     'mythology': 'Their infamous siege on the Sutton farmhouse occurred on a UFO-filled August night in 1955.',
-    'name': 'The Kelly Little Green Men',
+    'name': 'Kelly Little Green Men',
     'region': 'Kentucky',
-    'visual': 'the-kelly-little-green-men.png'
+    'visual': 'kelly-little-green-men.png'
   },
   {
     'abstract': 'A predatory shapeshifter endemic to the Louisiana bayous, born of a genetic or supernatural curse that triggers violent, lupine transformations.',
@@ -285,9 +285,9 @@ export const creatures: CreatureData[] = [
     'ecology': 'Native to the dense forests of Michigan.',
     'etymology': 'Known simply as a man-dog or Dogman based on its hybrid appearance.',
     'mythology': 'First famously encountered in 1887 by a pair of lumberjacks who poked a cornered dog with a stick, only to watch in terror as the beast stood upright on its hind legs.',
-    'name': 'The Michigan Dogman',
+    'name': 'Michigan Dogman',
     'region': 'Michigan',
-    'visual': 'the-michigan-dogman.png'
+    'visual': 'michigan-dogman.png'
   },
   {
     'abstract': 'A cursed, emaciated apex predator of the northern forests driven by an insatiable cannibalistic metabolism that continuously excretes an odor of decay.',
@@ -417,9 +417,9 @@ export const creatures: CreatureData[] = [
     'ecology': 'Prowls the terrestrial neighborhoods of North Carolina.',
     'etymology': 'Named after the town of Bladenboro in North Carolina.',
     'mythology': 'Maintaining a criminal rap sheet stretching back to the 1950s, the beast\'s trail finally went cold in 2003, though paranoid locals continue to keep their pets indoors overnight.',
-    'name': 'The Beast of Bladenboro',
+    'name': 'Beast of Bladenboro',
     'region': 'North Carolina',
-    'visual': 'the-beast-of-bray-road.png'
+    'visual': 'beast-of-bladenboro.png'
   },
   {
     'abstract': 'An immense, vividly colored avian cryptid whose unique physiology allows it to manipulate atmospheric conditions and project bio-electric lightning from its wings.',
@@ -477,9 +477,9 @@ export const creatures: CreatureData[] = [
     'ecology': 'Inhabits the terrestrial woodlands of Pennsylvania.',
     'etymology': 'Named The Squonk.',
     'mythology': 'Its behavior makes it less of a terrifying X-Files monster and more akin to a tragic, cartoonish entity from Rick And Morty.',
-    'name': 'The Squonk',
+    'name': 'Squonk',
     'region': 'Pennsylvania',
-    'visual': 'the-squonk.png'
+    'visual': 'squonk.png'
   },
   {
     'abstract': 'An undead biological anomaly perfectly preserved against extreme winter elements, feeding parasitically on the life force of her surviving genetic relatives.',
@@ -501,7 +501,7 @@ export const creatures: CreatureData[] = [
     'ecology': 'An amphibious predator native to the lake and swamp ecosystems of South Carolina.',
     'etymology': 'Named for its emergence from Scape Ore Swamp in South Carolina.',
     'mythology': 'In active operation since the 1980s, the monster provides true horror movie material, frequently leaving deep, serious scratch marks on the roofs of vehicles belonging to lucky survivors.',
-    'name': 'Lizard Man of Scape Ore Swamp',
+    'name': 'Lizard Man',
     'region': 'South Carolina',
     'visual': 'lizard-man-of-scape-ore-swamp.png'
   },
@@ -609,9 +609,9 @@ export const creatures: CreatureData[] = [
     'ecology': 'Inhabits the terrestrial environment of Elkhorn, Wisconsin.',
     'etymology': 'Named after the rural thoroughfare of Bray Road in Elkhorn, Wisconsin.',
     'mythology': 'A massive spate of local werewolf sightings in the early nineties caught the immediate attention of the national press, though local panic was kept to a minimum due to the creature\'s oddly human-like physique.',
-    'name': 'The Beast of Bray Road',
+    'name': 'Beast of Bray Road',
     'region': 'Wisconsin',
-    'visual': 'the-beast-of-bray-road.png'
+    'visual': 'beast-of-bray-road.png'
   },
   {
     'abstract': 'A terrestrial lagomorph afflicted with horn-producing viral papillomas, inexplicably possessing a vocal structure capable of perfectly mimicking human tenor melodies.',

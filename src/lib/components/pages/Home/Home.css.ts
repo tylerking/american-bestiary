@@ -143,11 +143,11 @@ export const specimensSubheading = style({
 
 export const specimenGrid = style({
   '@media': {
-    '(max-width: 600px)': {
-      gridTemplateColumns: '1fr',
-    },
     '(max-width: 900px)': {
       gridTemplateColumns: 'repeat(2, 1fr)',
+    },
+    '(max-width: 600px)': {
+      gridTemplateColumns: '1fr',
     },
   },
   display: 'grid',

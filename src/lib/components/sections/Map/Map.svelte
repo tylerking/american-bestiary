@@ -3,6 +3,7 @@
   import type { CreatureData } from '$lib/data/creatures'
 
   import { goto } from '$app/navigation'
+  import { filterCreatures } from '$lib/utils/search'
   import { slugify } from '$lib/utils/slugify'
   import { SvelteMap } from 'svelte/reactivity'
 
@@ -28,14 +29,8 @@
   let searchOpen = $state(false)
 
   const searchResults = $derived.by(() => {
-    const val = searchQuery.toLowerCase().trim()
-    if (!val || !creatures) return []
-    return creatures
-      .filter((creature: CreatureData) =>
-        creature.name.toLowerCase().includes(val) ||
-          creature.region?.toLowerCase().includes(val)
-      )
-      .slice(0, 8)
+    if (!searchQuery.trim() || !creatures) return []
+    return filterCreatures(creatures, searchQuery).slice(0, 8)
   })
 
   const byRegion = $derived.by(() => {

@@ -6,6 +6,7 @@
   import { goto } from '$app/navigation'
   import { page } from '$app/stores'
   import { archives } from '$lib/data/archives'
+  import { filterCreatures } from '$lib/utils/search'
 
   import Card from '../../elements/Card/Card.svelte'
   import Container from '../../elements/Container/Container.svelte'
@@ -28,17 +29,7 @@
       })
     }
 
-    const val = query.toLowerCase().trim()
-    if (val) {
-      results = results.filter(
-        (creature: CreatureData) =>
-          creature.name.toLowerCase().includes(val) ||
-            (creature.region?.toLowerCase().includes(val)) ||
-            (creature.classification?.toLowerCase().includes(val)),
-      )
-    }
-
-    return results
+    return filterCreatures(results, query)
   })
 
   function handleInput() {
@@ -49,7 +40,11 @@
   }
 
   function toggleCategory(category: TaxonomicCategory) {
-    activeCategory = activeCategory === category ? null : category
+    if (activeCategory && activeCategory.name === category.name) {
+      activeCategory = null
+    } else {
+      activeCategory = category
+    }
   }
 
   function clearAll() {
@@ -76,22 +71,6 @@
   </header>
 
   <div
-    aria-label='Filter by classification'
-    class={styles.categoryRow}
-    role='group'>
-    {#each archives.categories as category (category.name)}
-      <button
-        aria-pressed={activeCategory === category}
-        class='{styles.categoryPill} {activeCategory === category ? styles.categoryPillActive : ''}'
-        onclick={() => toggleCategory(category)}>
-        <Typography
-          tag='span'
-          variant='label'>{category.name}</Typography>
-      </button>
-    {/each}
-  </div>
-
-  <div
     class={styles.controls}>
     <label
       class={styles.filterLabel}
@@ -113,6 +92,22 @@
       variant='caption'>
       {filtered.length} specimen{filtered.length !== 1 ? 's' : ''}
     </Typography>
+  </div>
+
+  <div
+    aria-label='Filter by classification'
+    class={styles.categoryRow}
+    role='group'>
+    {#each archives.categories as category (category.name)}
+      <button
+        aria-pressed={activeCategory && activeCategory.name === category.name}
+        class='{styles.categoryPill} {activeCategory && activeCategory.name === category.name ? styles.categoryPillActive : ''}'
+        onclick={() => toggleCategory(category)}>
+        <Typography
+          tag='span'
+          variant='label'>{category.name}</Typography>
+      </button>
+    {/each}
   </div>
 
   {#if activeCategory}
