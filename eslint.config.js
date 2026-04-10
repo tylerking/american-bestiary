@@ -43,7 +43,12 @@ export default [
   },
 
   {
-    files: ['eslint.config.*'],
+    files: [
+      'eslint.config.*',
+      'svelte.config.*',
+      'vite.config.*',
+      'playwright.config.*'
+    ],
     ...configs.disableTypeChecked,
     rules: {
       ...configs.disableTypeChecked.rules,

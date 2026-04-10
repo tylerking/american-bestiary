@@ -22,13 +22,13 @@ export const test = base.extend<MyFixtures>({
   creaturePage: async ({ page }, use) => {
     await use(new CreaturePage(page))
   },
-  creatures: async ({}, use) => {
+  creatures: async (_, use) => {
     await use(creatures)
   },
   homePage: async ({ page }, use) => {
     await use(new HomePage(page))
   },
-  testCreature: async ({}, use) => {
+  testCreature: async (_, use) => {
     const creature = creatures.find(c => c.name === 'White Thang') || creatures[0]
     await use(creature)
   },
