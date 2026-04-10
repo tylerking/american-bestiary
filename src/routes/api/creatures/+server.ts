@@ -27,11 +27,13 @@ export const POST: RequestHandler = async ({ request }) => {
     anatomy: body.anatomy,
     behavior: body.behavior,
     classification: body.classification,
+    color: body.color,
     ecology: body.ecology,
     etymology: body.etymology,
     mythology: body.mythology,
     name: body.name,
     region: body.region,
+    source: body.source,
     visual: body.visual,
   })
 
