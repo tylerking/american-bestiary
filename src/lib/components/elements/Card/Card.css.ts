@@ -1,4 +1,4 @@
-import { keyframes, style, styleVariants } from '@vanilla-extract/css'
+import { keyframes, style } from '@vanilla-extract/css'
 
 import { theme } from '../../../styles/theme.css'
 

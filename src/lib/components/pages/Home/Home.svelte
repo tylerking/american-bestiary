@@ -141,7 +141,7 @@
                 <h3
                   class={styles.specimenName}>{highlight.name}</h3>
                 <Typography
-                  class='{styles.specimenRegion} {highlight.color && highlight.color in styles.regionColor ? styles.regionColor[highlight.color as keyof typeof styles.regionColor] : ""}'
+                  class='{styles.specimenRegion} {highlight.color && highlight.color in styles.regionColor ? styles.regionColor[highlight.color as keyof typeof styles.regionColor] : ''}'
                   variant='badge'>{highlight.region}</Typography>
               </div>
               <Typography

@@ -6,7 +6,6 @@
 
   import Image from '../Image/Image.svelte'
   import Link from '../Link/Link.svelte'
-  import State from '../State/State.svelte'
   import Typography from '../Typography/Typography.svelte'
   import * as styles from './Card.css'
 

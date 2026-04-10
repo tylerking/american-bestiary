@@ -40,7 +40,7 @@
   }
 
   function toggleCategory(category: TaxonomicCategory) {
-    if (activeCategory && activeCategory.name === category.name) {
+    if (activeCategory?.name === category.name) {
       activeCategory = null
     } else {
       activeCategory = category
@@ -100,8 +100,8 @@
     role='group'>
     {#each archives.categories as category (category.name)}
       <button
-        aria-pressed={activeCategory && activeCategory.name === category.name}
-        class='{styles.categoryPill} {activeCategory && activeCategory.name === category.name ? styles.categoryPillActive : ''}'
+        aria-pressed={activeCategory?.name === category.name}
+        class='{styles.categoryPill} {activeCategory?.name === category.name ? styles.categoryPillActive : ''}'
         onclick={() => toggleCategory(category)}>
         <Typography
           tag='span'
