@@ -43,6 +43,13 @@ export default [
   },
 
   {
+    files: ['tests/e2e/fixtures.ts'],
+    rules: {
+      'no-empty-pattern': 'off'
+    }
+  },
+
+  {
     files: [
       'eslint.config.*',
       'svelte.config.*',
