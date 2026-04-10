@@ -11,7 +11,7 @@ export interface FooterData {
 
 export interface GlobalData {
   archives_meta: Meta
-  detail_meta: (_name: string) => Meta
+  creature_meta: (_name: string) => Meta
   footer: FooterData
   header: HeaderData
   home_meta: Meta
@@ -41,7 +41,7 @@ export const global: GlobalData = {
     description: 'A complete list of legendary creatures documented across North America.',
     title: 'Cryptid Archives | American Bestiary',
   },
-  detail_meta: (name: string) => ({
+  creature_meta: (name: string) => ({
     description: `Biological anatomy, ecological niches, and behavioral profiles for the ${name}.`,
     title: `${name} | American Bestiary Specimen`,
   }),

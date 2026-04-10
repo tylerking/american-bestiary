@@ -5,11 +5,13 @@ export interface CreateCreatureInput {
   anatomy: string
   behavior: string
   classification: string
+  color: string
   ecology: string
   etymology: string
   mythology: string
   name: string
   region: string
+  source: string
   visual: string
 }
 

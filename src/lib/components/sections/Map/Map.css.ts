@@ -29,7 +29,7 @@ export const mapSvg = style({
 })
 
 export const mapPath = style({
-  fill: `${theme.colors.background.subtle} !important`,
+  fill: theme.colors.background.subtle,
   stroke: 'none !important',
   transition: `fill ${theme.transition.base}`,
 })
@@ -59,13 +59,13 @@ export const strokeLayer = style({
 })
 
 const mapColors = {
-  blue: theme.colors.map.blue,
-  brown: theme.colors.map.brown,
-  green: theme.colors.map.green,
-  orange: theme.colors.map.orange,
-  purple: theme.colors.map.purple,
-  red: theme.colors.map.red,
-  teal: theme.colors.map.teal,
+  blue: theme.colors.common.blue,
+  brown: theme.colors.common.brown,
+  green: theme.colors.common.green,
+  orange: theme.colors.common.orange,
+  purple: theme.colors.common.purple,
+  red: theme.colors.common.red,
+  teal: theme.colors.common.teal,
 } as const
 
 export const hasCreature = style({})

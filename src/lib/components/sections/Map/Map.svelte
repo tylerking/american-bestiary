@@ -69,26 +69,6 @@
       svg.prepend(defs)
     }
 
-    const stateColors = new SvelteMap<string, keyof typeof styles.stateColor>([
-      ['Alabama', 'brown'], ['Alaska', 'purple'], ['Arizona', 'purple'],
-      ['Arkansas', 'purple'], ['California', 'blue'], ['Colorado', 'orange'],
-      ['Connecticut', 'green'], ['Delaware', 'purple'], ['District of Columbia', 'green'],
-      ['Florida', 'purple'], ['Georgia', 'teal'], ['Hawaii', 'orange'],
-      ['Idaho', 'orange'], ['Illinois', 'teal'], ['Indiana', 'green'],
-      ['Iowa', 'blue'], ['Kansas', 'green'], ['Kentucky', 'purple'],
-      ['Louisiana', 'teal'], ['Maine', 'green'], ['Maryland', 'teal'],
-      ['Massachusetts', 'purple'], ['Michigan', 'orange'], ['Minnesota', 'brown'],
-      ['Mississippi', 'orange'], ['Missouri', 'orange'], ['Montana', 'brown'],
-      ['Nebraska', 'purple'], ['Nevada', 'brown'], ['New Hampshire', 'brown'],
-      ['New Jersey', 'orange'], ['New Mexico', 'teal'], ['New York', 'blue'],
-      ['North Carolina', 'blue'], ['North Dakota', 'green'], ['Ohio', 'blue'],
-      ['Oklahoma', 'blue'], ['Oregon', 'teal'], ['Pennsylvania', 'green'],
-      ['Rhode Island', 'orange'], ['South Carolina', 'orange'], ['South Dakota', 'orange'],
-      ['Tennessee', 'green'], ['Texas', 'brown'], ['Utah', 'green'],
-      ['Vermont', 'teal'], ['Virginia', 'orange'], ['Washington', 'green'],
-      ['West Virginia', 'brown'], ['Wisconsin', 'green'], ['Wyoming', 'blue'],
-    ])
-
     const paths = node.querySelectorAll<SVGPathElement>('path[data-name]')
     const cleanups: (() => void)[] = []
 
@@ -116,7 +96,7 @@
 
         path.parentNode?.insertBefore(groupElement, path)
         groupElement.appendChild(path)
-        const color = stateColors.get(stateName) || 'blue'
+        const color = (creature.color || 'blue') as keyof typeof styles.stateColor
         path.classList.add(styles.hasCreature, styles.stateColor[color], 'has-creature')
 
         const clipPath = document.createElementNS('http://www.w3.org/2000/svg', 'clipPath')

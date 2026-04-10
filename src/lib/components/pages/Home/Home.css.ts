@@ -143,11 +143,11 @@ export const specimensSubheading = style({
 
 export const specimenGrid = style({
   '@media': {
-    '(max-width: 900px)': {
-      gridTemplateColumns: 'repeat(2, 1fr)',
-    },
     '(max-width: 600px)': {
       gridTemplateColumns: '1fr',
+    },
+    '(max-width: 900px)': {
+      gridTemplateColumns: 'repeat(2, 1fr)',
     },
   },
   display: 'grid',
@@ -199,62 +199,70 @@ export const awardColor = styleVariants({
   blue: [
     specimenAwardBase,
     {
-      background: theme.colors.map.blue,
-      borderBottomColor: theme.colors.map.blue,
+      background: theme.colors.common.blue,
+      borderBottomColor: theme.colors.common.blue,
       color: theme.colors.background.root,
     },
   ],
   brown: [
     specimenAwardBase,
     {
-      background: theme.colors.map.brown,
-      borderBottomColor: theme.colors.map.brown,
+      background: theme.colors.common.brown,
+      borderBottomColor: theme.colors.common.brown,
       color: theme.colors.background.root,
     },
   ],
   green: [
     specimenAwardBase,
     {
-      background: theme.colors.map.green,
-      borderBottomColor: theme.colors.map.green,
+      background: theme.colors.common.green,
+      borderBottomColor: theme.colors.common.green,
       color: theme.colors.background.root,
     },
   ],
   orange: [
     specimenAwardBase,
     {
-      background: theme.colors.map.orange,
-      borderBottomColor: theme.colors.map.orange,
+      background: theme.colors.common.orange,
+      borderBottomColor: theme.colors.common.orange,
       color: theme.colors.background.root,
     },
   ],
   purple: [
     specimenAwardBase,
     {
-      background: theme.colors.map.purple,
-      borderBottomColor: theme.colors.map.purple,
+      background: theme.colors.common.purple,
+      borderBottomColor: theme.colors.common.purple,
       color: theme.colors.background.root,
     },
   ],
   red: [
     specimenAwardBase,
     {
-      background: theme.colors.map.red,
-      borderBottomColor: theme.colors.map.red,
+      background: theme.colors.common.red,
+      borderBottomColor: theme.colors.common.red,
       color: theme.colors.background.root,
     },
   ],
   teal: [
     specimenAwardBase,
     {
-      background: theme.colors.map.teal,
-      borderBottomColor: theme.colors.map.teal,
+      background: theme.colors.common.teal,
+      borderBottomColor: theme.colors.common.teal,
       color: theme.colors.background.root,
     },
   ],
 })
 
 export const specimenImage = style({
+  '@media': {
+    '(max-width: 600px)': {
+      aspectRatio: '16 / 9',
+    },
+    '(max-width: 900px)': {
+      aspectRatio: '3 / 2',
+    },
+  },
   aspectRatio: '4 / 3',
   overflow: 'hidden',
   position: 'relative',
@@ -265,6 +273,7 @@ export const specimenImg = style({
   display: 'block',
   height: '100%',
   objectFit: 'cover',
+  objectPosition: 'top center',
   selectors: {
     [`${notableCard}:hover &`]: {
       transform: 'scale(1.05)',
@@ -298,6 +307,15 @@ export const specimenName = style({
 })
 
 export const specimenRegion = style({
-  color: theme.colors.status.success,
   flexShrink: 0,
+})
+
+export const regionColor = styleVariants({
+  blue: { color: theme.colors.common.blue },
+  brown: { color: theme.colors.common.brown },
+  green: { color: theme.colors.common.green },
+  orange: { color: theme.colors.common.orange },
+  purple: { color: theme.colors.common.purple },
+  red: { color: theme.colors.common.red },
+  teal: { color: theme.colors.common.teal },
 })

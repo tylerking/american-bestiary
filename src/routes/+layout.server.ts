@@ -18,11 +18,13 @@ export const load: LayoutServerLoad = async () => {
       anatomy: c.anatomy,
       behavior: c.behavior,
       classification: c.classification,
+      color: c.color,
       ecology: c.ecology,
       etymology: c.etymology,
       mythology: c.mythology,
       name: c.name,
       region: c.region,
+      source: c.source,
       visual: normalizeImage(c.name, c.visual),
     })),
   }

@@ -56,7 +56,7 @@ export const home: HomeData = {
       'etymology': 'Derived from the Latin \'unus\' (one) and \'cornu\' (horn); it is also widely known by the Greek term monoceros.',
       'mythology': 'Early encounters with the unicorn were heavily cataloged in medieval bestiaries, drawing heavily from the ancient Greek natural history text called the Physiologus. Early theologians used the creature\'s biological traits as a historical allegory to teach the Christian faith. Its small size represented Christ\'s humility, its single horn symbolized the unity of God, and its capture in a virgin\'s lap was viewed as a direct representation of the incarnation of Jesus in the Virgin Mary\'s womb. Furthermore, its legendary fierceness and wildness symbolized the inability of hell to hold him.',
       'name': 'Unicorn',
-      'visual': 'unicorn.png'
+      'visual': 'notable/unicorn.jpg'
     }
   },
   'modern_bestiary_definition': {

@@ -6,13 +6,14 @@ export { default as Input } from './elements/Input/Input.svelte'
 export { default as Link } from './elements/Link/Link.svelte'
 export { default as Loading } from './elements/Loading/Loading.svelte'
 export { default as Logo } from './elements/Logo/Logo.svelte'
+export { default as Seo } from './elements/Seo/Seo.svelte'
 export { default as State } from './elements/State/State.svelte'
 export { default as Tooltip } from './elements/Tooltip/Tooltip.svelte'
 export { default as Typography } from './elements/Typography/Typography.svelte'
 
 // Pages
 export { default as Archives } from './pages/Archives/Archives.svelte'
-export { default as Detail } from './pages/Detail/Detail.svelte'
+export { default as Creature } from './pages/Creature/Creature.svelte'
 export { default as Home } from './pages/Home/Home.svelte'
 
 // Sections

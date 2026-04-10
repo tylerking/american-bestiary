@@ -56,7 +56,7 @@
               <Image
                 alt={home.historical_baseline.specimen_data.name}
                 class={styles.specimenCardImage}
-                src='/{home.historical_baseline.specimen_data.visual}' />
+                src='/images/{home.historical_baseline.specimen_data.visual}' />
               <figcaption
                 class={styles.specimenCardCaption}>
                 <Typography
@@ -141,7 +141,7 @@
                 <h3
                   class={styles.specimenName}>{highlight.name}</h3>
                 <Typography
-                  class={styles.specimenRegion}
+                  class='{styles.specimenRegion} {highlight.color && highlight.color in styles.regionColor ? styles.regionColor[highlight.color as keyof typeof styles.regionColor] : ""}'
                   variant='badge'>{highlight.region}</Typography>
               </div>
               <Typography

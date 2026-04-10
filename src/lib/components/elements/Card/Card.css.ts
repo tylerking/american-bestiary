@@ -1,4 +1,4 @@
-import { keyframes, style } from '@vanilla-extract/css'
+import { keyframes, style, styleVariants } from '@vanilla-extract/css'
 
 import { theme } from '../../../styles/theme.css'
 
@@ -90,12 +90,12 @@ export const titleClamping = style({
   whiteSpace: 'nowrap',
 })
 
-export const stateLabel = style({
-  color: theme.colors.status.success,
+export const regionBadge = style({
+  color: theme.colors.common.green,
 })
 
 export const typeTag = style({
-  color: theme.colors.map.brown,
+  color: theme.colors.common.brown,
 })
 
 export const descriptionClamping = style({

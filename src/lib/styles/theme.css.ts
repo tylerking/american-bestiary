@@ -22,13 +22,7 @@ export const theme = createThemeContract({
       primary: null,
       secondary: null,
     },
-    foreground: {
-      inverse: null,
-      mid: null,
-      muted: null,
-      root: null,
-    },
-    map: {
+    common: {
       blue: null,
       brown: null,
       green: null,
@@ -36,6 +30,12 @@ export const theme = createThemeContract({
       purple: null,
       red: null,
       teal: null,
+    },
+    foreground: {
+      inverse: null,
+      mid: null,
+      muted: null,
+      root: null,
     },
     neutral: {
       100: null, 200: null, 300: null, 400: null, 500: null, 600: null,
@@ -117,13 +117,7 @@ createGlobalTheme(':root', theme, {
       muted: tokens.colors.neutral[100],
     },
     brand: tokens.colors.brand,
-    foreground: {
-      inverse: tokens.colors.cream[200],
-      mid: tokens.colors.neutral[500],
-      muted: tokens.colors.neutral[400],
-      root: tokens.colors.neutral[600],
-    },
-    map: {
+    common: {
       blue: tokens.colors.common.blue,
       brown: tokens.colors.common.brown,
       green: tokens.colors.common.green,
@@ -131,6 +125,12 @@ createGlobalTheme(':root', theme, {
       purple: tokens.colors.common.purple,
       red: tokens.colors.common.red,
       teal: tokens.colors.common.teal,
+    },
+    foreground: {
+      inverse: tokens.colors.cream[200],
+      mid: tokens.colors.neutral[500],
+      muted: tokens.colors.neutral[400],
+      root: tokens.colors.neutral[600],
     },
     neutral: tokens.colors.neutral,
     status: {

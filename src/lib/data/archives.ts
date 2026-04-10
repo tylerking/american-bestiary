@@ -46,8 +46,8 @@ export const archives: TaxonomicBrowsing = {
     {
       'description': 'Bizarre, technologically advanced, or highly mutated entities that defy traditional terrestrial biology.',
       'examples': [
-        'The Kelly Little Green Men',
-        'Pascagoula River Aliens',
+        'Little Green Men',
+        'Pascagoula Aliens',
         'Melon Heads'
       ],
       'keywords': ['extraterrestrial', 'alien', 'mutant', 'robotic', 'demonic'],
@@ -55,5 +55,5 @@ export const archives: TaxonomicBrowsing = {
     }
   ],
   'description': 'Browse our database by accepted cryptozoological classifications.',
-  'heading': 'Taxonomic Archives'
+  'heading': 'Cryptid Archives'
 }
