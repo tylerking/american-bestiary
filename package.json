@@ -15,7 +15,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "seed": "tsx scripts/seed.ts"
+    "seed": "tsx scripts/seed.ts",
+    "prepare": "husky"
   },
   "dependencies": {
     "@sveltejs/adapter-netlify": "^4.3.0",
@@ -39,6 +40,7 @@
     "eslint-plugin-perfectionist": "^5.4.0",
     "eslint-plugin-svelte": "^3.14.0",
     "globals": "^17.1.0",
+    "husky": "^9.1.7",
     "svelte-check": "^4.0.0",
     "tsx": "^4.19.0",
     "typescript": "^5.7.0",

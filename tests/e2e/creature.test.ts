@@ -18,6 +18,7 @@ test.describe('Creature Detail Page', () => {
       await expect(creaturePage.behaviorSection).toBeVisible()
       await expect(creaturePage.ecologySection).toBeVisible()
       await expect(creaturePage.mythologySection).toBeVisible()
+      await expect(creaturePage.sourceLink).toBeVisible()
     })
   })
 
