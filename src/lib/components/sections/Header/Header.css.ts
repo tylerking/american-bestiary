@@ -61,13 +61,10 @@ export const text = style({
 export const title = style({
   color: theme.colors.background.root,
   fontFamily: theme.typography.fontFamily.heading,
-  fontSize: theme.typography.fontSize.h1,
+  fontSize: 'clamp(1.25rem, 5vw, 1.8rem)',
   fontWeight: 900,
   letterSpacing: '0.01em',
   lineHeight: 1.1,
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
 })
 
 export const subtitle = style({
@@ -80,7 +77,4 @@ export const subtitle = style({
   fontSize: '0.82rem',
   fontStyle: 'italic',
   marginTop: '2px',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
 })
