@@ -63,7 +63,7 @@
   <header
     class={styles.pageHeader}>
     <Typography
-      tag='h2'
+      tag='h1'
       variant='h2'>{archives.heading}</Typography>
     <Typography
       tag='p'
@@ -72,13 +72,6 @@
 
   <div
     class={styles.controls}>
-    <label
-      class={styles.filterLabel}
-      for='creature-filter'>
-      <Typography
-        tag='span'
-        variant='label'>Search</Typography>
-    </label>
     <Input
       ariaLabel='Filter creatures'
       bind:value={query}

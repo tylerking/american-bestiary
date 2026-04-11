@@ -656,7 +656,7 @@ export const creatures: CreatureData[] = [
     'mythology': 'This localized rural legend gained traction in 1971 after the 1951 disappearance of teenager Sam Harris. It acts as a cautionary tale to keep children out of the woods, though no scientific evidence supports its existence.',
     'name': 'Northfield Pigman',
     'region': 'Vermont',
-    'source': 'https://vermonter.com/the-totally-creepy-story-of-the-vermont-pigman/',
+    'source': 'https://www.vermonter.com/vermont-pigman/',
     'visual': 'northfield-pigman.png'
   },
   {

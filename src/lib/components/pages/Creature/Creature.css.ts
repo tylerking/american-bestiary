@@ -147,11 +147,25 @@ export const sourceLink = style({
   textDecoration: 'none',
 })
 
+export const externalIcon = style({
+  backgroundColor: 'currentColor',
+  display: 'inline-block',
+  height: '14px',
+  maskImage: 'url(/icons/external.svg)',
+  maskRepeat: 'no-repeat',
+  maskSize: 'contain',
+  WebkitMaskImage: 'url(/icons/external.svg)',
+  WebkitMaskRepeat: 'no-repeat',
+  WebkitMaskSize: 'contain',
+  width: '14px',
+})
+
 export const nav = style({
   '@media': {
     '(max-width: 700px)': {
-      alignItems: 'flex-start',
+      alignItems: 'stretch',
       flexDirection: 'column',
+      gap: theme.spacing[6],
     },
   },
   alignItems: 'center',
@@ -205,6 +219,7 @@ export const navNext = style({
   '@media': {
     '(max-width: 700px)': {
       marginLeft: 0,
+      textAlign: 'left',
     },
   },
   marginLeft: 'auto',

@@ -16,7 +16,7 @@
   let {
     children,
     class: className = '',
-    tag = '',
+    tag,
     variant = 'body'
   }: Props = $props()
 

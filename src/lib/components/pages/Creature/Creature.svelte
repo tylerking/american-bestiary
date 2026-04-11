@@ -43,7 +43,7 @@
           class={styles.titleRow}>
           <Typography
             class={styles.name}
-            tag='h2'
+            tag='h1'
             variant='display'>{creature.name}</Typography>
           {#if creature.region}
             <Typography
@@ -84,8 +84,10 @@
         {#if creature.etymology}
           <section
             class={styles.section}>
-            <span
-              class={styles.sectionLabel}>Etymology</span>
+            <Typography
+              class={styles.sectionLabel}
+              tag='h2'
+              variant='label'>Etymology</Typography>
             <Typography
               variant='body'>{creature.etymology}</Typography>
           </section>
@@ -94,8 +96,10 @@
         {#if creature.anatomy}
           <section
             class={styles.section}>
-            <span
-              class={styles.sectionLabel}>Anatomy</span>
+            <Typography
+              class={styles.sectionLabel}
+              tag='h2'
+              variant='label'>Anatomy</Typography>
             <Typography
               variant='body'>{creature.anatomy}</Typography>
           </section>
@@ -104,8 +108,10 @@
         {#if creature.ecology}
           <section
             class={styles.section}>
-            <span
-              class={styles.sectionLabel}>Ecology</span>
+            <Typography
+              class={styles.sectionLabel}
+              tag='h2'
+              variant='label'>Ecology</Typography>
             <Typography
               variant='body'>{creature.ecology}</Typography>
           </section>
@@ -114,8 +120,10 @@
         {#if creature.behavior}
           <section
             class={styles.section}>
-            <span
-              class={styles.sectionLabel}>Behavior</span>
+            <Typography
+              class={styles.sectionLabel}
+              tag='h2'
+              variant='label'>Behavior</Typography>
             <Typography
               variant='body'>{creature.behavior}</Typography>
           </section>
@@ -124,8 +132,10 @@
         {#if creature.mythology}
           <section
             class={styles.section}>
-            <span
-              class={styles.sectionLabel}>Mythology</span>
+            <Typography
+              class={styles.sectionLabel}
+              tag='h2'
+              variant='label'>Mythology</Typography>
             <Typography
               variant='body'>{creature.mythology}</Typography>
           </section>
@@ -134,29 +144,17 @@
         {#if creature.source}
           <footer
             class={styles.sourceSection}>
-            <span
-              class={styles.sourceLabel}>Primary Source</span>
+            <Typography
+              class={styles.sourceLabel}
+              tag='h2'
+              variant='label'>Primary Source</Typography>
             <Link
               class={styles.sourceLink}
               href={creature.source}
               target='_blank'>
               {sourceDisplay}
-              <svg
-                fill='none'
-                height='14'
-                stroke='currentColor'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='2'
-                viewBox='0 0 24 24'
-                width='14'
-                xmlns='http://www.w3.org/2000/svg'><path
-                d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'></path><polyline
-                points='15 3 21 3 21 9'></polyline><line
-                x1='10'
-                x2='21'
-                y1='14'
-                y2='3'></line></svg>
+              <div
+                class={styles.externalIcon}></div>
             </Link>
           </footer>
         {/if}

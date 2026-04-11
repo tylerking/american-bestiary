@@ -143,16 +143,17 @@ export const specimensSubheading = style({
 
 export const specimenGrid = style({
   '@media': {
-    '(max-width: 600px)': {
-      gridTemplateColumns: '1fr',
-    },
-    '(max-width: 900px)': {
+    '(min-width: 769px)': {
       gridTemplateColumns: 'repeat(2, 1fr)',
+    },
+    '(min-width: 901px)': {
+      gap: '28px',
+      gridTemplateColumns: 'repeat(3, 1fr)',
     },
   },
   display: 'grid',
-  gap: '28px',
-  gridTemplateColumns: 'repeat(3, 1fr)',
+  gap: theme.spacing[4],
+  gridTemplateColumns: '1fr',
 })
 
 export const notableCard = style({
@@ -256,14 +257,14 @@ export const awardColor = styleVariants({
 
 export const specimenImage = style({
   '@media': {
-    '(max-width: 600px)': {
-      aspectRatio: '16 / 9',
-    },
-    '(max-width: 900px)': {
+    '(min-width: 769px)': {
       aspectRatio: '3 / 2',
     },
+    '(min-width: 901px)': {
+      aspectRatio: '4 / 3',
+    },
   },
-  aspectRatio: '4 / 3',
+  aspectRatio: '16 / 9',
   overflow: 'hidden',
   position: 'relative',
   width: '100%',

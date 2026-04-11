@@ -138,8 +138,10 @@
               class={styles.specimenContent}>
               <div
                 class={styles.specimenTitleRow}>
-                <h3
-                  class={styles.specimenName}>{highlight.name}</h3>
+                <Typography
+                  class={styles.specimenName}
+                  tag='h4'
+                  variant='h3'>{highlight.name}</Typography>
                 <Typography
                   class='{styles.specimenRegion} {highlight.color && highlight.color in styles.regionColor ? styles.regionColor[highlight.color as keyof typeof styles.regionColor] : ''}'
                   variant='badge'>{highlight.region}</Typography>

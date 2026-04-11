@@ -17,6 +17,25 @@ export const inner = style({
   display: 'flex',
   gap: theme.spacing[5],
   justifyContent: 'space-between',
+  position: 'relative',
+})
+
+export const hamburger = style({
+  '@media': {
+    '(max-width: 900px)': {
+      display: 'flex',
+    },
+  },
+  alignItems: 'center',
+  background: 'none',
+  border: 'none',
+  color: theme.colors.background.root,
+  cursor: 'pointer',
+  display: 'none',
+  height: '44px',
+  justifyContent: 'center',
+  padding: 0,
+  width: '44px',
 })
 
 export const brand = style({
@@ -24,6 +43,7 @@ export const brand = style({
   color: 'inherit',
   display: 'flex',
   gap: '14px',
+  minWidth: 0,
   selectors: {
     '&:hover': {
       textDecoration: 'none',
@@ -35,6 +55,7 @@ export const brand = style({
 export const text = style({
   display: 'flex',
   flexDirection: 'column',
+  overflow: 'hidden',
 })
 
 export const title = style({
@@ -44,6 +65,9 @@ export const title = style({
   fontWeight: 900,
   letterSpacing: '0.01em',
   lineHeight: 1.1,
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
 })
 
 export const subtitle = style({
@@ -56,4 +80,7 @@ export const subtitle = style({
   fontSize: '0.82rem',
   fontStyle: 'italic',
   marginTop: '2px',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  whiteSpace: 'nowrap',
 })

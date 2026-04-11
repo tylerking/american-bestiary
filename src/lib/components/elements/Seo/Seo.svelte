@@ -53,6 +53,9 @@
     content={absoluteImage}
     property='og:image' />
   <meta
+    content={title}
+    property='og:image:alt' />
+  <meta
     content='American Bestiary'
     property='og:site_name' />
 
@@ -68,6 +71,9 @@
   <meta
     content={absoluteImage}
     name='twitter:image' />
+  <meta
+    content={title}
+    name='twitter:image:alt' />
 
   {#if jsonLdHtml}
     <!-- eslint-disable-next-line svelte/no-at-html-tags -->

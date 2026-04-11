@@ -3,14 +3,48 @@ import { style } from '@vanilla-extract/css'
 import { theme } from '../../../styles/theme.css'
 
 export const root = style({
+  '@media': {
+    '(max-width: 900px)': {
+      background: theme.colors.brand.primary,
+      borderTop: `1px solid ${theme.colors.brand.accent}`,
+      display: 'none',
+      flexDirection: 'column',
+      gap: 0,
+      left: 0,
+      padding: `${theme.spacing[4]} ${theme.spacing[6]}`,
+      position: 'absolute',
+      right: 0,
+      top: '100%',
+      width: '100%',
+      zIndex: 10,
+    },
+  },
   display: 'flex',
   gap: theme.spacing[1],
 })
 
+export const mobileOpen = style({
+  '@media': {
+    '(max-width: 900px)': {
+      display: 'flex',
+    },
+  },
+})
+
 export const link = style({
+  '@media': {
+    '(max-width: 900px)': {
+      borderRadius: 0,
+      justifyContent: 'center',
+      padding: `${theme.spacing[4]} 0`,
+      width: '100%',
+    },
+  },
+  alignItems: 'center',
   border: '1.5px solid transparent',
   borderRadius: theme.radius.sm,
   color: theme.colors.neutral[300],
+  display: 'flex',
   fontFamily: theme.typography.fontFamily.body,
   fontSize: '0.85rem',
   fontWeight: 500,

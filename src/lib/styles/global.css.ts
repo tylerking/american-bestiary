@@ -11,7 +11,9 @@ globalStyle('*, *::before, *::after', {
 })
 
 globalStyle('html', {
+  overflowX: 'hidden',
   scrollBehavior: 'smooth',
+  width: '100%',
 })
 
 globalStyle('body', {
@@ -24,7 +26,9 @@ globalStyle('body', {
   lineHeight: theme.typography.lineHeight.normal,
   minHeight: '100vh',
   MozOsxFontSmoothing: 'grayscale',
+  overflowX: 'hidden',
   WebkitFontSmoothing: 'antialiased',
+  width: '100%',
 })
 
 globalStyle('h1, h2, h3, h4, h5, h6', {

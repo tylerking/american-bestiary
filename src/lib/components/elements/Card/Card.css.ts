@@ -68,7 +68,7 @@ export const content = style({
   flexDirection: 'column',
   gap: theme.spacing[3],
   justifyContent: 'center',
-  padding: `${theme.spacing[5]} ${theme.spacing[5]} ${theme.spacing[5]} ${theme.spacing[1]}`,
+  padding: `${theme.spacing[5]} ${theme.spacing[6]}`,
 })
 
 export const header = style({
@@ -85,6 +85,7 @@ export const titleRow = style({
 })
 
 export const titleClamping = style({
+  fontSize: '1.42em',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   whiteSpace: 'nowrap',

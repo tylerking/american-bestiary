@@ -30,6 +30,7 @@
         class={styles.titleRow}>
         <Typography
           class={styles.titleClamping}
+          tag='h2'
           variant='h3'>{creature.name || 'Unknown'}</Typography>
         <Typography
           class={styles.regionBadge}
