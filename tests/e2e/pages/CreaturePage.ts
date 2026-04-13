@@ -12,7 +12,7 @@ export class CreaturePage {
   readonly title: Locator
 
   constructor(public readonly page: Page) {
-    this.title = page.locator('article h2')
+    this.title = page.locator('article h1')
     
     this.region = page.locator('article header span').first()
     
@@ -23,11 +23,18 @@ export class CreaturePage {
     
     this.sourceLink = page.locator('footer').filter({ hasText: /Source/i }).getByRole('link')
     
-    this.backToMapLink = page.getByText('Map', { exact: false }).first()
-    this.backToArchivesLink = page.getByText('Archives', { exact: false }).first()
+    this.backToMapLink = page.getByRole('link', { name: 'Map' })
+    this.backToArchivesLink = page.getByRole('link', { name: 'Archives' })
   }
 
   async goto(slug: string) {
     await this.page.goto(`/creatures/${slug}`)
+  }
+
+  async openMenu() {
+    const hamburger = this.page.getByRole('button', { name: 'Toggle navigation menu' })
+    if (await hamburger.isVisible()) {
+      await hamburger.click()
+    }
   }
 }

@@ -42,13 +42,13 @@ test.describe('Archives Page', () => {
     
     await test.step('Click first card', async () => {
       const firstCard = archivesPage.cards.first()
-      creatureName = await firstCard.locator('h3').innerText()
+      creatureName = await firstCard.locator('h2').innerText()
       await firstCard.click()
     })
     
     await test.step('Verify navigation to detail page', async () => {
       await expect(page).toHaveURL(/.*\/creatures\/.*/)
-      await expect(page.locator('article h2')).toContainText(creatureName)
+      await expect(page.locator('article h1')).toContainText(creatureName)
     })
   })
 })

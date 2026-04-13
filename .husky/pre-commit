@@ -1,1 +1,21 @@
-pnpm lint && pnpm check && pnpm test
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Running pre-commit hooks..."
+
+echo "Linting..."
+pnpm lint || exit 1
+
+echo "Checking..."
+pnpm check || exit 1
+
+echo "Running unit tests..."
+pnpm test || exit 1
+
+echo "Building..."
+pnpm build || exit 1
+
+echo "Running E2E tests..."
+pnpm test:e2e || exit 1
+
+echo "Pre-commit hooks passed successfully!"

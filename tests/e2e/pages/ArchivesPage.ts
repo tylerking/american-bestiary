@@ -6,7 +6,7 @@ export class ArchivesPage {
   readonly filterInput: Locator
 
   constructor(public readonly page: Page) {
-    this.cards = page.locator('section[aria-label="Creature cards"] a')
+    this.cards = page.locator('section[aria-label="Creature cards"] > a')
     this.filterInput = page.locator('input[aria-label="Filter creatures"]')
     this.emptyState = page.getByText('No specimens match your current filters')
   }

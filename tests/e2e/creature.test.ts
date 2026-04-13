@@ -28,12 +28,14 @@ test.describe('Creature Detail Page', () => {
     })
     
     await test.step('Test Back to Map navigation', async () => {
+      await creaturePage.openMenu()
       await creaturePage.backToMapLink.click()
       await expect(page).toHaveURL('/')
     })
     
     await test.step('Go back and test Back to Archives navigation', async () => {
       await page.goBack()
+      await creaturePage.openMenu()
       await creaturePage.backToArchivesLink.click()
       await expect(page).toHaveURL('/archives')
     })
