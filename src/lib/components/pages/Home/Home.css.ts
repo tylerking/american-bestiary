@@ -295,6 +295,7 @@ export const specimenContent = style({
 export const specimenTitleRow = style({
   alignItems: 'baseline',
   display: 'flex',
+  flexWrap: 'wrap',
   gap: theme.spacing[3],
   justifyContent: 'space-between',
 })
@@ -302,9 +303,10 @@ export const specimenTitleRow = style({
 export const specimenName = style({
   color: theme.colors.brand.primary,
   fontFamily: theme.typography.fontFamily.heading,
-  fontSize: '1.25rem',
+  fontSize: 'clamp(1.1rem, 2vw + 0.5rem, 1.25rem)',
   fontVariationSettings: '\'SOFT\' 100, \'WONK\' 1',
   fontWeight: 800,
+  lineHeight: 1.2,
 })
 
 export const specimenRegion = style({

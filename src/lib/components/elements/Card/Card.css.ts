@@ -9,7 +9,7 @@ const cardEnter = keyframes({
 
 export const root = style({
   '@media': {
-    '(max-width: 1100px)': {
+    '(max-width: 700px)': {
       flexDirection: 'column',
       minHeight: 'auto',
     },
@@ -24,6 +24,7 @@ export const root = style({
   borderRadius: theme.radius.sm,
   boxShadow: theme.shadow.base,
   display: 'flex',
+  flexDirection: 'row',
   minHeight: '200px',
   overflow: 'hidden',
   selectors: {
@@ -38,7 +39,11 @@ export const root = style({
 
 export const imageWrapper = style({
   '@media': {
-    '(max-width: 1100px)': {
+    '(max-width: 700px)': {
+      order: 3,
+      width: '100%',
+    },
+    '(min-width: 701px) and (max-width: 1100px)': {
       aspectRatio: '16 / 9',
       height: 'auto',
       width: '100%',
@@ -50,19 +55,30 @@ export const imageWrapper = style({
 })
 
 export const image = style({
+  '@media': {
+    '(max-width: 700px)': {
+      height: 'auto',
+      objectFit: 'contain',
+    },
+  },
   display: 'block',
   height: '100%',
   objectFit: 'cover',
   selectors: {
     [`${root}:hover &`]: {
       transform: 'scale(1.05)',
-    }
+    },
   },
   transition: `transform ${theme.transition.slow}`,
-  width: '100%'
+  width: '100%',
 })
 
 export const content = style({
+  '@media': {
+    '(max-width: 700px)': {
+      display: 'contents',
+    },
+  },
   display: 'flex',
   flex: 1,
   flexDirection: 'column',
@@ -72,34 +88,61 @@ export const content = style({
 })
 
 export const header = style({
-  display: 'flex',
-  flexDirection: 'column',
+  '@media': {
+    '(max-width: 700px)': {
+      display: 'contents',
+    },
+  },
+  display: 'grid',
   gap: theme.spacing[1],
+  gridTemplateAreas: '"title region" "type type"',
+  gridTemplateColumns: '1fr auto',
 })
 
-export const titleRow = style({
-  alignItems: 'baseline',
-  display: 'flex',
-  gap: theme.spacing[3],
-  justifyContent: 'space-between',
-})
-
-export const titleClamping = style({
-  fontSize: '1.42em',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-})
-
-export const regionBadge = style({
-  color: theme.colors.common.green,
+export const cardTitle = style({
+  '@media': {
+    '(max-width: 700px)': {
+      order: 1,
+      padding: `${theme.spacing[5]} ${theme.spacing[6]} 0`,
+    },
+  },
+  fontSize: 'clamp(1.1rem, 2vw + 0.5rem, 1.42em)',
+  gridArea: 'title',
+  lineHeight: 1.2,
 })
 
 export const typeTag = style({
+  '@media': {
+    '(max-width: 700px)': {
+      order: 2,
+      padding: `0 ${theme.spacing[6]} ${theme.spacing[2]}`,
+    },
+  },
   color: theme.colors.common.brown,
+  gridArea: 'type',
+})
+
+export const regionBadge = style({
+  '@media': {
+    '(max-width: 700px)': {
+      alignSelf: 'flex-start',
+      margin: `${theme.spacing[3]} ${theme.spacing[6]}`,
+      order: 4,
+    },
+  },
+  color: theme.colors.common.green,
+  gridArea: 'region',
 })
 
 export const descriptionClamping = style({
+  '@media': {
+    '(max-width: 700px)': {
+      display: 'block',
+      order: 5,
+      padding: `0 ${theme.spacing[6]} ${theme.spacing[14]}`,
+      WebkitLineClamp: 'initial',
+    },
+  },
   color: theme.colors.foreground.mid,
   display: '-webkit-box',
   overflow: 'hidden',

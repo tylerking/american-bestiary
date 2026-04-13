@@ -26,19 +26,16 @@
     class={styles.content}>
     <div
       class={styles.header}>
-      <div
-        class={styles.titleRow}>
-        <Typography
-          class={styles.titleClamping}
-          tag='h2'
-          variant='h3'>{creature.name || 'Unknown'}</Typography>
-        <Typography
-          class={styles.regionBadge}
-          variant='badge'>{creature.region || ''}</Typography>
-      </div>
+      <Typography
+        class={styles.cardTitle}
+        tag='h2'
+        variant='h3'>{creature.name || 'Unknown'}</Typography>
       <Typography
         class={styles.typeTag}
         variant='label'>{creature.classification}</Typography>
+      <Typography
+        class={styles.regionBadge}
+        variant='badge'>{creature.region || ''}</Typography>
     </div>
     <Typography
       class={styles.descriptionClamping}
