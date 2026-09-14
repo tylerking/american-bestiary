@@ -147,7 +147,7 @@ The site follows the reader's operating system setting. Light and dark are the s
 
 ## Analytics and privacy
 
-Google Tag Manager (container `GTM-5F34B659`, the same container as the previous site) loads on public pages from `src/app.html`. It never loads on admin pages: `hooks.server.ts` strips the marked tag block from every `/admin` response. The content security policy in `svelte.config.js` allows its loader script by hash and the Google Tag Manager and Google Analytics domains it needs.
+Google Tag Manager (container `GTM-5F34B659`, the same container as the previous site) loads on public pages from `src/app.html`, on the visitor's first scroll, tap, click or key press, or after 10 seconds, so it never slows the initial page load. It never loads on admin pages: `hooks.server.ts` strips the marked tag block from every `/admin` response. The content security policy in `svelte.config.js` allows its loader script by hash and the Google Tag Manager and Google Analytics domains it needs.
 
 The admin dashboard reads its own first-party beacons: page views and outbound link clicks are sent to `/api/event`. Those beacons set no cookie, honour Do Not Track, ignore bots, and reduce referrers to their host. IP addresses are never stored; the rate limiter keeps only an HMAC of the address that expires with its window.
 

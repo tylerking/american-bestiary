@@ -161,7 +161,7 @@
 			{#each group.items as specimen, position (specimen.slug)}
 				<SpecimenCard
 					eager={index === 0 && position < FIRST_ROW}
-					sizes='(max-width: 760px) 45vw, 200px'
+					sizes='(max-width: 420px) calc(100vw - 58px), (max-width: 760px) calc(50vw - 40px), 200px'
 					{specimen}
 					variant='archive' />
 			{/each}

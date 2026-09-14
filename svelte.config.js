@@ -41,7 +41,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		csp,
-		inlineStyleThreshold: 4096,
+		output: { bundleStrategy: 'single' },
 		typescript: {
 			config: (config) => ({ ...config, include: [...config.include, '../*.ts', '../*.js', '../scripts/**/*.ts'] })
 		}

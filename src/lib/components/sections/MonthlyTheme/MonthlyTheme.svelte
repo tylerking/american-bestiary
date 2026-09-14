@@ -31,7 +31,7 @@
 		{#each theme.members as member (member.slug)}
 			<SpecimenCard
 				note={member.note}
-				sizes='(max-width: 760px) 45vw, 260px'
+				sizes='(max-width: 760px) calc(50vw - 61px), 260px'
 				specimen={member}
 				variant='member' />
 		{/each}

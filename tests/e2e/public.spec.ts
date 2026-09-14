@@ -227,9 +227,11 @@ test('the skip link is the first stop and lands on the content', async ({ page }
 	await expect(page).toHaveURL(/#main-content$/)
 })
 
-test('loads Google Tag Manager', async ({ page }) => {
+test('loads Google Tag Manager on the first interaction, not during page load', async ({ page }) => {
+	await page.goto('/archives', { waitUntil: 'networkidle' })
+	expect(await page.evaluate(() => 'dataLayer' in window)).toBe(false)
 	const loader = page.waitForRequest('https://www.googletagmanager.com/gtm.js?id=GTM-5F34B659')
-	await page.goto('/archives')
+	await page.keyboard.press('Tab')
 	await loader
 	expect(await page.evaluate(() => 'dataLayer' in window)).toBe(true)
 })
