@@ -79,6 +79,48 @@ describe('handle', () => {
 		expect(await (await handle({ event: admin, resolve: withTags })).text()).toBe('<head></head>')
 	})
 
+	it('inlines the built stylesheet with its font paths made absolute, and keeps the link if it cannot be fetched', async () => {
+		const css =
+			'@font-face{src:url(../../../fonts/Fraunces-Variable.woff2)}body{background:url(data:image/png;base64,AA)}'
+		const fetcher = vi
+			.spyOn(globalThis, 'fetch')
+			.mockResolvedValueOnce(new Response(css))
+			.mockResolvedValueOnce(new Response('', { status: 404 }))
+		const render = (href: string) =>
+			vi.fn(
+				async (_event: unknown, options?: ResolveOptions) =>
+					new Response(
+						await options?.transformPageChunk?.({
+							html: `<head><link href="${href}" rel="stylesheet"></head>`,
+							done: true
+						})
+					)
+			)
+		const { event } = requestEvent({ path: '/creatures/mothman', routeId: '/(site)/creatures/[slug]' })
+		const inlined = await (await handle({ event, resolve: render('../_app/immutable/assets/bundle.one.css') })).text()
+		expect(fetcher.mock.calls[0]?.[0]).toMatchObject({ pathname: '/_app/immutable/assets/bundle.one.css' })
+		expect(inlined).toBe(
+			'<head><style>@font-face{src:url(/fonts/Fraunces-Variable.woff2)}body{background:url(data:image/png;base64,AA)}</style></head>'
+		)
+		await handle({ event, resolve: render('../_app/immutable/assets/bundle.one.css') })
+		expect(fetcher).toHaveBeenCalledTimes(1)
+
+		const missing = await (await handle({ event, resolve: render('../_app/immutable/assets/bundle.two.css') })).text()
+		expect(missing).toBe('<head><link href="../_app/immutable/assets/bundle.two.css" rel="stylesheet"></head>')
+
+		fetcher.mockRejectedValueOnce(new Error('offline'))
+		const offline = await (await handle({ event, resolve: render('../_app/immutable/assets/bundle.three.css') })).text()
+		expect(offline).toBe('<head><link href="../_app/immutable/assets/bundle.three.css" rel="stylesheet"></head>')
+	})
+
+	it('never preloads the stylesheet it inlines', async () => {
+		const { event } = requestEvent({ path: '/', routeId: '/(site)' })
+		await handle({ event, resolve })
+		const options = resolve.mock.calls[0]?.[1]
+		expect(options?.preload?.({ type: 'css', path: '/bundle.css' })).toBe(false)
+		expect(options?.preload?.({ type: 'js', path: '/bundle.js' })).toBe(true)
+	})
+
 	it('treats a path that matches no route as public', async () => {
 		const { event } = requestEvent({ path: '/nowhere' })
 		const response = await handle({ event, resolve })

@@ -227,6 +227,16 @@ test('the skip link is the first stop and lands on the content', async ({ page }
 	await expect(page).toHaveURL(/#main-content$/)
 })
 
+test('renders without waiting on a stylesheet request, with the fonts still loading', async ({ page }) => {
+	await page.goto('/creatures/mothman', { waitUntil: 'networkidle' })
+	await expect(page.locator('link[rel="stylesheet"]')).toHaveCount(0)
+	const fontsLoaded = await page.evaluate(async () => {
+		await document.fonts.ready
+		return document.fonts.check('16px Fraunces')
+	})
+	expect(fontsLoaded).toBe(true)
+})
+
 test('loads Google Tag Manager on the first interaction, not during page load', async ({ page }) => {
 	await page.goto('/archives', { waitUntil: 'networkidle' })
 	expect(await page.evaluate(() => 'dataLayer' in window)).toBe(false)
