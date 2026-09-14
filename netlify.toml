@@ -1,6 +1,9 @@
 [build]
-  command = "pnpm run build"
-  publish = "build"
+	command = "pnpm run build"
+	publish = "build"
 
 [build.environment]
-  NODE_VERSION = "22"
+	VITE_IMAGE_CDN = "true"
+
+[context.production]
+	command = "test -n \"$DATABASE_URL\" && pnpm run db:migrate && pnpm run build"

@@ -1,0 +1,1162 @@
+import type { Kind, Source, Status, Territory } from '../../src/lib/types'
+
+export interface SeedCreature {
+	slug: string
+	name: string
+	territory: Territory
+	classification: string
+	kind: Kind
+	status: Status
+	abstract: string
+	gloss: string
+	etymology: string
+	anatomy: string
+	ecology: string
+	behavior: string
+	mythology: string
+	sources: Source[]
+}
+
+export const CREATURES: SeedCreature[] = [
+	{
+		slug: 'alkali-lake-monster',
+		name: 'Alkali Lake Monster',
+		territory: 'Nebraska',
+		classification: 'Aquatic Reptile',
+		kind: 'serpent',
+		status: 'hoax',
+		abstract:
+			'A massive, crocodilian-rhinoceros hybrid that aggressively claims Walgren Lake as its territory, whose world-shaking legend was manufactured by a politician to sell newspapers.',
+		gloss: 'Fabricated by John G. Maher, a Nebraska newspaperman with a record of invented stories.',
+		etymology:
+			"Also known as the Walgren Lake Monster, and granted the faux-scientific taxonomy 'Giganticus Brutervious'.",
+		anatomy:
+			'It is described as a dull grey or brown beast resembling an alligator, but vastly larger and heavier. It measures forty feet in length and possesses a distinct rhinoceros horn situated between its eyes and nostrils.',
+		ecology:
+			'Endemic to the alkaline waters of Walgren Lake near Hay Springs, Nebraska. Modern biologists propose eyewitnesses simply saw an unusually large beaver or mudpuppy.',
+		behavior:
+			'It comes ashore daily to devour large numbers of ducks and livestock. Its massive weight causes the earth to tremble so violently that farmers become seasick miles away, while its breath creates a thick, green mist that severely disorients passing travelers.',
+		mythology:
+			'Fundamentalist Christians theorized the beast was placed by Satan to test the faith of locals. In reality, the legend was completely fabricated by John G. Maher, a notorious Nebraska politician and newspaperman known for perpetrating massive media hoaxes to sell newspapers.',
+		sources: [
+			{ url: 'https://en.wikipedia.org/w/index.php?title=Walgren_Lake_Monster&oldid=1346305660', oldid: 1346305660 }
+		]
+	},
+	{
+		slug: 'altamaha-ha',
+		name: 'Altamaha-ha',
+		territory: 'Georgia',
+		classification: 'Aquatic Cryptid',
+		kind: 'serpent',
+		status: 'unexplained',
+		abstract:
+			"A graceful, sturgeon-like aquatic cryptid with crocodilian features that has navigated Georgia's freshwater streams since before early indigenous documentation.",
+		gloss: 'The 2018 Wolf Island carcass was papier-mache and a stuffed shark, made by an artist.',
+		etymology: "Named directly for the Altamaha River, and affectionately abbreviated to 'Altie' by locals.",
+		anatomy:
+			'It is an aquatic beast measuring 20 to 30 feet in length, featuring a distinct sturgeon-like body with a prominent bony ridge on its top. Its head is characterized by a crocodilian snout, large protruding bug eyes, and sharp teeth. Biologists propose it may simply be an alligator gar.',
+		ecology:
+			'Inhabits the myriad small streams and abandoned rice fields near the mouth of the Altamaha River in southeastern Georgia.',
+		behavior:
+			'It navigates the streams with graceful, undulating movements, rising and diving in a manner resembling a dolphin.',
+		mythology:
+			"The creature's existence is deeply rooted in Muscogee tradition. It achieved modern infamy in 2018 when a decomposing 'corpse' was found on Wolf Island, which was later revealed to be a papier-mâché and stuffed shark hoax created by performance artist Zardulu.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Altamaha-ha&oldid=1335446951', oldid: 1335446951 }]
+	},
+	{
+		slug: 'bear-lake-monster',
+		name: 'Bear Lake Monster',
+		territory: 'Utah',
+		classification: 'Aquatic Reptile / Hoax',
+		kind: 'serpent',
+		status: 'hoax',
+		abstract:
+			'An ancient, crocodilian aquatic lizard that remained the elusive apex predator of Bear Lake through unmatched evasive maneuvers until its creator admitted it was a total fabrication.',
+		gloss: 'Joseph C. Rich, who published the first account in 1868, later admitted he invented it.',
+		etymology:
+			"Also known by the contest-winning name 'Isabella', and occasionally referred to as the water devil by locals.",
+		anatomy:
+			'It is a massive, cream-colored beast measuring 30 to 50 feet in length. It possesses a large undulating body, short 18-inch legs, and a bizarre head resembling a cow, otter, crocodile, or walrus minus the tusks.',
+		ecology: 'Endemic to the freshwater depths of Bear Lake, straddling the Utah-Idaho border.',
+		behavior:
+			'An elusive aquatic predator that swam faster than a locomotive and actively marauded along the shoreline. It proved entirely immune to massive capture efforts involving baited hooks on thick cables.',
+		mythology:
+			"A massive lake-monster craze gripped the region in 1868 after Joseph C. Rich published articles in the Deseret News. Twenty-six years later, Rich finally confessed the entire phenomenon had been a 'wonderful first-class lie' to generate excitement.",
+		sources: [
+			{ url: 'https://en.wikipedia.org/w/index.php?title=Bear_Lake_Monster&oldid=1335448166', oldid: 1335448166 }
+		]
+	},
+	{
+		slug: 'beast-of-bladenboro',
+		name: 'Beast of Bladenboro',
+		territory: 'North Carolina',
+		classification: 'Feline Predator',
+		kind: 'beast',
+		status: 'misidentification',
+		abstract:
+			'A vampiric, feline predator that mimics the cries of a human infant to lure and exsanguinate regional livestock and neighborhood pets.',
+		gloss: 'Contemporary wildlife officers attributed the killings to dogs and a bobcat.',
+		etymology:
+			'Named after the rural town of Bladenboro in North Carolina following a string of mysterious animal deaths in the winter of 1953-54.',
+		anatomy:
+			'It is a sleek, dark, bushy predator measuring roughly 4.5 feet long, physically resembling a massive cat, a bear, or a panther. It possesses crushing jaw strength and leaves physical tracks resembling those of a large dog or cougar.',
+		ecology: 'Prowls the terrestrial neighborhoods and heavy swamplands of North Carolina.',
+		behavior:
+			'A highly aggressive, stealthy predator that actively hunts domestic dogs, crushing their jaws and ripping their bodies into ribbons. It possesses a terrifying vocal structure capable of perfectly mimicking a crying human baby to lure prey into the brush. It exhibits vampiric tendencies, supposedly drinking its victims completely dry of blood.',
+		mythology:
+			"The 1953 panic drew hundreds of armed hunters to the swamps. Skeptics and historians argue the killer was merely a bobcat, a wolverine, or a specific German Shepherd/Hound mix named 'Big Boy' that possessed a penchant for jumping fences.",
+		sources: [
+			{ url: 'https://en.wikipedia.org/w/index.php?title=Beast_of_Bladenboro&oldid=1335447797', oldid: 1335447797 }
+		]
+	},
+	{
+		slug: 'beast-of-bray-road',
+		name: 'Beast of Bray Road',
+		territory: 'Wisconsin',
+		classification: 'Canine Werewolf',
+		kind: 'beast',
+		status: 'misidentification',
+		abstract:
+			'A highly muscular, upright-walking canine that seamlessly shifts between quadrupedal and bipedal locomotion to terrorize the rural roadways of Wisconsin.',
+		gloss: 'Sightings cluster on one rural road and follow a 1991 local newspaper series.',
+		etymology:
+			'Named after the rural thoroughfare of Bray Road in Elkhorn, Wisconsin, where it was first prominently sighted.',
+		anatomy:
+			'It is a terrifying freak of nature standing 6 to 7 feet tall, covered in fur, with pointed ears and a long wolf nose. It possesses an incredibly muscular, humanoid-style torso and large, glowing red or orange eyes.',
+		ecology: 'Inhabits the terrestrial, agricultural environments and woodlands surrounding Elkhorn, Wisconsin.',
+		behavior:
+			'It exhibits advanced locomotion, capable of rapidly shifting to move upright like a man or sprint on all fours to chase deer. It scavenges roadkill and aggressively charges vehicles, leaving long claw marks on car doors.',
+		mythology:
+			'A massive spate of local werewolf sightings in the 1980s caught the immediate attention of the national press. Skeptics and biologists maintain the creature is simply the misidentification of a large dog, a gray wolf, or a bear.',
+		sources: [
+			{ url: 'https://en.wikipedia.org/w/index.php?title=Beast_of_Bray_Road&oldid=1345047437', oldid: 1345047437 }
+		]
+	},
+	{
+		slug: 'beast-of-busco',
+		name: 'Beast of Busco',
+		territory: 'Indiana',
+		classification: 'Lake Monster / Reptile',
+		kind: 'serpent',
+		status: 'misidentification',
+		abstract:
+			'An exceptionally massive, Volkswagen-sized snapping turtle whose ability to remain submerged indefinitely has allowed it to easily evade town-wide capture efforts.',
+		gloss: 'Alligator snapping turtles reach 100 kilograms. Nothing was recovered when the lake was partly drained.',
+		etymology:
+			"Nicknamed 'Oscar' after Oscar Fulk, the original 1898 owner of the farm where it was sighted, and formally dubbed the 'Beast of Busco' by local columnists.",
+		anatomy:
+			'It is biologically classified as a gigantic snapping turtle of entirely unprecedented proportions, with eyewitnesses estimating its weight at a staggering 500 pounds.',
+		ecology: 'Inhabits the seven-acre, freshwater expanse of Fulk Lake near Churubusco, Indiana.',
+		behavior:
+			'It acts as a highly evasive aquatic survivor, successfully avoiding massive capture efforts including deep-sea diving expeditions, the introduction of alluring female turtles as bait, and a partial draining of the lake.',
+		mythology:
+			"Gaining national prominence in 1949 via a UPI wire story, 'Buscomania' gripped the town, drawing massive mobs of sightseers. Though never captured, the beast's legacy lives on in Churubusco's annual 'Turtle Days' festival and a concrete statue in the town center.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Beast_of_Busco&oldid=1335447105', oldid: 1335447105 }]
+	},
+	{
+		slug: 'bigfoot',
+		name: 'Bigfoot',
+		territory: 'Washington',
+		classification: 'Hominid / Primate',
+		kind: 'humanoid',
+		status: 'misidentification',
+		abstract:
+			'A massive, reclusive hominid boasting a continent-wide footprint, serving as the biological basis for centuries of indigenous legends and modern wilderness sightings.',
+		gloss: 'Mainstream zoology attributes the record to hoaxes, pareidolia and upright black bears.',
+		etymology:
+			"Widely known as Sasquatch, an anglicized version of the Halq'emeylem word 'sasq'ets' meaning 'hairy man', coined in 1929 by J.W. Burns.",
+		anatomy:
+			'It is a massive, muscular, bipedal ape-like creature standing 6 to 9 feet tall. It is covered in dark brown or reddish hair and possesses broad shoulders with no visible neck. Biologically, it leaves massive 16-inch footprints.',
+		ecology:
+			'Primarily inhabits the remote, temperate terrestrial woodlands of the Pacific Northwest and Washington state.',
+		behavior:
+			'A highly elusive omnivore that shies away from humans. However, historical encounters, such as the 1924 Ape Canyon incident, claim they threw large rocks at prospector cabins and exhibited territorial hostility.',
+		mythology:
+			"Tracing its fame back hundreds of years to Native American legends of 'wild men', it became the ultimate North American cryptid. Mainstream science universally dismisses it as a combination of hoaxes, pareidolia, and the misidentification of upright black bears.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Bigfoot&oldid=1347464924', oldid: 1347464924 }]
+	},
+	{
+		slug: 'champy',
+		name: 'Champy',
+		territory: 'New York',
+		classification: 'Sea Serpent',
+		kind: 'serpent',
+		status: 'unexplained',
+		abstract:
+			'A massive, horned sea serpent of Lake Champlain whose biological defenses include sinking vessels and emitting an aura that distorts photographic evidence.',
+		gloss: 'The 1977 Mansi photograph remains unresolved, and the lake has produced nothing else.',
+		etymology: "Centuries ago, the indigenous Mohawk and Iroquois people named the creature 'Onyare'kowa'.",
+		anatomy:
+			'It is a massive, dark serpentine monster measuring up to 187 feet in length. Historic 1819 accounts describe a head similar to a horse, featuring three teeth, eyes the color of peeled onions, a red belt around its neck, and a distinct white star on its forehead.',
+		ecology:
+			'Endemic to the 125-mile-long freshwater ecosystem of Lake Champlain, shared between New York and Vermont.',
+		behavior:
+			'It exhibits evasive aquatic behaviors, swimming swiftly just below the surface. In 2003, scientific researchers recorded sounds within the lake matching the echolocation of beluga whales or dolphins, despite neither species existing in the lake, suggesting the beast utilizes advanced biological sonar.',
+		mythology:
+			'French cartographer Samuel de Champlain is falsely credited with the first sighting in 1609 due to a mistranslated 1970 magazine article. Its legend captured the attention of P.T. Barnum, who offered a $50,000 reward for its capture in the 19th century.',
+		sources: [
+			{ url: 'https://en.wikipedia.org/w/index.php?title=Champ_(folklore)&oldid=1344506933', oldid: 1344506933 }
+		]
+	},
+	{
+		slug: 'chessie',
+		name: 'Chessie',
+		territory: 'Maryland',
+		classification: 'Sea Serpent',
+		kind: 'serpent',
+		status: 'misidentification',
+		abstract:
+			'A serpentine marine anomaly of the Chesapeake Bay whose extreme reclusiveness is celebrated as an official symbol for regional environmental advocacy.',
+		gloss: 'Sightings track closely with manatee excursions recorded in the bay.',
+		etymology: "Named 'Chessie' as a localized nod to the famous Scottish Loch Ness Monster.",
+		anatomy:
+			"It is a dark, finless, snake-like creature measuring 25 to 30 feet in length. It features a slender, football-shaped head resembling a horse, and biological flippers for steering. Biologists note that alleged sightings frequently lack undulating serpentine motion, instead matching the 'smooth footprint' left by marine mammals.",
+		ecology:
+			'Endemic to the estuarine ecosystems of the Chesapeake Bay and the Potomac River. Biologists confirm Florida manatees occasionally migrate to these precise waters.',
+		behavior:
+			'It swims gracefully just below the surface, occasionally breaching its head and tail simultaneously. Highly evasive, it actively avoids close human interaction.',
+		mythology:
+			'Sightings peaked in the 1980s following a famous 1982 video recording by Robert and Karen Frew. The U.S. Fish and Wildlife Service embraced the monster in 1986, publishing educational coloring books featuring Chessie to promote ecological health and anti-pollution efforts.',
+		sources: [
+			{ url: 'https://en.wikipedia.org/w/index.php?title=Chessie_(sea_monster)&oldid=1340969478', oldid: 1340969478 }
+		]
+	},
+	{
+		slug: 'chupacabra',
+		name: 'Chupacabra',
+		territory: 'Texas',
+		classification: 'Terrestrial Predator / Mutant Canid',
+		kind: 'beast',
+		status: 'misidentification',
+		abstract:
+			'A vampiric livestock predator whose legend began with science fiction influence in Puerto Rico before evolving into misidentified, parasite-infected canids in the American Southwest.',
+		gloss: 'Every carcass submitted for testing has returned coyote or dog with sarcoptic mange.',
+		etymology:
+			"Coined in 1995 by Puerto Rican comedian Silverio Pérez, the name translates literally from Spanish as 'goat-sucker'.",
+		anatomy:
+			'Original 1995 accounts described a reptilian, alien-like biped with sharp dorsal spines. Modern North American variations describe a hairless, quadrupedal wild dog with a pronounced spinal ridge, severe skin thickening, and prominent fangs—symptoms aligning with severe mange.',
+		ecology:
+			'Ranges from Puerto Rico to the Southwestern United States, thriving in areas suffering from frequent, extreme dry seasons.',
+		behavior:
+			'Driven by the weakness of severe parasitic infection, these canids are forced to attack easy, enclosed livestock. They supposedly drain the blood of their victims through distinct puncture wounds.',
+		mythology:
+			"The initial 1995 panic was deeply influenced by the sci-fi horror film 'Species'. By the 2000s, the legend migrated north, where biological analysis of recovered 'chupacabras' consistently proved them to be coyotes or dogs afflicted with severe sarcoptic mange.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Chupacabra&oldid=1344363717', oldid: 1344363717 }]
+	},
+	{
+		slug: 'colossal-claude',
+		name: 'Colossal Claude',
+		territory: 'Oregon',
+		classification: 'Sea Serpent',
+		kind: 'serpent',
+		status: 'unexplained',
+		abstract:
+			'A bold, forty-foot marine serpent with a horse-like head that exhibits kleptoparasitic behavior by stealing heavy catches directly from commercial fishing lines.',
+		gloss: 'Reported by professional mariners, which is why it is still on the register.',
+		etymology:
+			"Given the whimsical moniker 'Colossal Claude' by the sailors and local fishermen who frequently spotted him.",
+		anatomy:
+			'It is 40 feet long with a big round body covered in tan hair, leading down to a mean-looking tail. It features an 8-foot-long neck, an evil, snaky facial expression, and a head resembling an overgrown horse.',
+		ecology:
+			'Patrols the turbulent open ocean waters off the Columbia River Bar in Oregon. Marine biologists suggest sightings were actually encounters with massive whale sharks or a species of elasmobranch.',
+		behavior:
+			'It acts as a brazen aquatic scavenger, fearlessly approaching fishing vessels. Its intimidating presence successfully deterred brave sailors from attempting to capture it in small boats.',
+		mythology:
+			'First spotted by the crew of the Lightship Columbia in 1934, it achieved legendary status among local fisheries. After rivaling the Loch Ness Monster in popularity for decades, the beast mysteriously vanished, with no reported sightings since the mid-1950s.',
+		sources: [
+			{
+				url: 'https://www.oregonlive.com/entertainment/2019/03/oregons-most-famous-mythical-creature-it-might-not-be-the-beast-you-think-it-is.html',
+				oldid: null
+			}
+		]
+	},
+	{
+		slug: 'dark-watchers',
+		name: 'Dark Watchers',
+		territory: 'California',
+		classification: 'Optical Phenomenon / Spirit',
+		kind: 'other',
+		status: 'unexplained',
+		abstract:
+			"Silent, towering shadowy figures native to California's twilight skies whose harmless but unsettling observational behavior has been documented by the Chumash tribe for millennia.",
+		gloss: 'Consistent with the Brocken spectre, an observer shadow magnified onto a distant cloudbank.',
+		etymology:
+			"Historically termed 'Los Vigilantes Oscuros' by early Spanish settlers, and recognized by the Native Chumash tribe simply as 'The Old Ones'.",
+		anatomy:
+			'They physically manifest as giant-sized, featureless dark silhouettes. They are consistently observed wearing flowing cloaks, wide-brimmed hats, and carrying walking sticks.',
+		ecology:
+			'Restricted exclusively to the high elevations of the Santa Lucia Mountains, appearing strictly during the atmospheric conditions of twilight and dawn.',
+		behavior:
+			'They exhibit strict, silent observation, standing motionlessly on the horizon to watch passing travelers. If directly approached or acknowledged, they instantly vanish.',
+		mythology:
+			"Recorded for thousands of years in Chumash oral narratives, writer John Steinbeck popularized them in modern literature. Modern scientific analysts attribute the sightings to the 'Brocken spectre' effect, an optical illusion where an observer's shadow is magnified and cast onto a distant cloudbank by the sun.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Dark_Watchers&oldid=1335446656', oldid: 1335446656 }]
+	},
+	{
+		slug: 'dover-demon',
+		name: 'Dover Demon',
+		territory: 'Massachusetts',
+		classification: 'Alien / Mutant',
+		kind: 'other',
+		status: 'misidentification',
+		abstract:
+			'A frail, quadrupedal entity with a bulbous melon-head and glowing eyes whose brief appearance perfectly aligned with the biological traits of a perched snowy owl.',
+		gloss: 'Joe Nickell matches the spindly arms and peach eyeshine to a snowy owl in headlights.',
+		etymology: 'Named by cryptozoologists after the town of Dover, Massachusetts, where it exclusively manifested.',
+		anatomy:
+			'A 4-foot-tall creature possessing a watermelon-shaped head devoid of a nose or mouth. It features long, spindly arms and large eyes that glow orange or peach in the reflection of car headlights.',
+		ecology: 'Briefly occupied the terrestrial stone walls and rural roads of Dover over two nights in 1977.',
+		behavior:
+			"It acts as a silent, stationary observer, perching atop broken stone walls. Skeptic Joe Nickell notes that its 'spindly arms' and 'peach glowing eyes' are scientifically consistent with the splayed feathers and eyeshine of a large snowy owl caught in halogen headlights.",
+		mythology:
+			"Sighted by local teenagers in April 1977, police ultimately concluded the event was a school vacation hoax. Researchers suggest the boys' imaginations were heavily influenced by the contemporary pop-culture releases of 'Star Wars' and 'Close Encounters of the Third Kind'.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Dover_Demon&oldid=1335447341', oldid: 1335447341 }]
+	},
+	{
+		slug: 'enfield-horror',
+		name: 'The Enfield Horror',
+		territory: 'Illinois',
+		classification: 'Extraterrestrial / Mutant',
+		kind: 'other',
+		status: 'unexplained',
+		abstract:
+			'An aggressive, tripedal anomaly capable of extraordinary twenty-five-foot leaps and identified by its flashlight-like pink eyes.',
+		gloss:
+			'A Western Illinois University study read the episode as social contagion, and a conservation officer suggested an escaped kangaroo.',
+		etymology: 'Named for its terrifying 1973 manifestation in Enfield, Illinois.',
+		anatomy:
+			'It is a grayish, 4.5-foot-tall entity possessing a short body, two small arms, and notably exactly three legs. Its face features two massive pink eyes that project light like flashlights. It leaves physical tracks resembling dog prints, but bearing six distinct toe pads.',
+		ecology: 'Briefly inhabited the terrestrial railroad embankments and brush of southern Illinois.',
+		behavior:
+			'Highly athletic and aggressive, it traverses terrain by executing fifty-foot distances in mere three-jump bounds. When shot by a firearm, it hisses sharply like a wildcat. It aggressively invades properties, scratching at doors and tearing the shoes of witnesses.',
+		mythology:
+			'Initially encountered by Henry McDaniel in 1973, the sightings provoked a massive influx of heavily armed, beer-drinking monster hunters into the town. A Western Illinois University study concluded the incident was a textbook case of social contagion and mass hysteria, while others suggested it was simply an escaped pet kangaroo or wild ape.',
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Enfield_Monster&oldid=1338315879', oldid: 1338315879 }]
+	},
+	{
+		slug: 'fouke-monster',
+		name: 'Fouke Monster',
+		territory: 'Arkansas',
+		classification: 'Hominid / Primate',
+		kind: 'humanoid',
+		status: 'unexplained',
+		abstract:
+			'A massive, swamp-dwelling primate recognized by its distinctively long, swinging limbs and a foul territorial musk.',
+		gloss: 'Archaeologists note that the three-toed tracks are impossible for a primate.',
+		etymology:
+			"Named by journalist Jim Powell after the rural town of Fouke, Arkansas. Early regional sightings referred to it as the 'Jonesville Monster'.",
+		anatomy:
+			'A large, bipedal creature covered in long dark hair, typically estimated to stand 7 feet tall and weigh 250 to 300 pounds, though extreme estimates claim heights of 10 feet and 800 pounds. It possesses bright red eyes the size of silver dollars and exudes a terrible odor combining skunk and wet dog. Footprints recovered from the area measure 17 inches long by 7 inches wide and peculiarly feature only three toes.',
+		ecology: 'Endemic to the swampy, rural regions surrounding Fouke and Boggy Creek in Arkansas.',
+		behavior:
+			'It moves with a rapid, galloping gait, swinging its arms aggressively in a manner similar to a monkey. Highly nocturnal, it has demonstrated territorial aggression by damaging rural homes, leaving deep scratch marks on siding and screens.',
+		mythology:
+			"The legend achieved national prominence after a highly publicized May 1971 attack on the home of Bobby and Elizabeth Ford. However, professional archaeologists note the three-toed tracks are a biological impossibility for primate species, concluding the monster fits poorly with the model of a living animal, but fits very well with a local legend that famously inspired the 1972 cult-classic film 'The Legend of Boggy Creek'.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Fouke_Monster&oldid=1335446613', oldid: 1335446613 }]
+	},
+	{
+		slug: 'jackalope',
+		name: 'Jackalope',
+		territory: 'Wyoming',
+		classification: 'Terrestrial Mammal / Lagomorph',
+		kind: 'beast',
+		status: 'misidentification',
+		abstract:
+			'A terrestrial lagomorph bearing antler-like cranial protrusions, whose underlying biological reality is rooted in the Shope papilloma virus despite its origins as a 1930s taxidermy hoax.',
+		gloss:
+			'Veterinary pathology attributes the antlers to Shope papilloma virus. The mounted specimens are taxidermy, first sold in Douglas in the 1930s.',
+		etymology: "A portmanteau of the words 'jackrabbit' and 'antelope'.",
+		anatomy:
+			'It physically resembles a standard North American jackrabbit but features sharp, deer-like antlers protruding from its head. The biological foundation for these horns is an infection of the Shope papilloma virus.',
+		ecology:
+			"Endemic to the plains of Wyoming. Natural predators include hunters seeking 'Jackalope Hunting Licenses' issued exclusively in the town of Douglas.",
+		behavior:
+			"It is a highly elusive, whiskey-loving creature with a remarkable vocal structure capable of 'throwing its voice' and perfectly mimicking human tenor melodies to sing along with cowboys around distant campfires. It breeds exclusively during lightning storms.",
+		mythology:
+			"The modern legend was popularized in 1932 by Douglas Herrick, a hunter who grafted deer antlers onto a jackrabbit carcass to sell to hotels. However, global historical texts have documented 'horned hares' for centuries.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Jackalope&oldid=1343405101', oldid: 1343405101 }]
+	},
+	{
+		slug: 'jersey-devil',
+		name: 'Jersey Devil',
+		territory: 'New Jersey',
+		classification: 'Demonic Mutant',
+		kind: 'other',
+		status: 'folkloric',
+		abstract:
+			'A biologically mutated, winged biped of the Pine Barrens born from 18th-century religious and political smear campaigns against an ostracized Quaker astrologer.',
+		gloss:
+			'Historian Brian Regal traces the creature to a printing feud with the Leeds family, whose crest carried a wyvern.',
+		etymology:
+			"Originally known as the 'Leeds Devil' or 'Devil of Leeds' before the standardized 'Jersey Devil' name emerged in the 20th century.",
+		anatomy:
+			'A bipedal, kangaroo-like or wyvern-like creature possessing a horse or goat head, leathery bat-wings, small arms with clawed hands, cloven hooves, and a forked tail. Skeptics note its size and biology closely match those of a vagrant sandhill crane.',
+		ecology: 'Inhabits the historically isolated and inhospitable Pine Barrens of South Jersey.',
+		behavior:
+			'It moves with rapid agility and frequently emits a high-pitched, blood-curdling scream. It actively engages in midwife-slaughtering and possesses an unexplainable compulsion for cattle-bothering.',
+		mythology:
+			"While local folklore claims it was the cursed 13th child of 'Mother Leeds', historian Brian Regal traces the myth directly to Daniel Leeds, an 18th-century Quaker ostracized for publishing astrological almanacs. Rival publishers, including Benjamin Franklin, relentlessly mocked the Leeds family—whose crest featured a winged wyvern—branding them as political 'monsters' and giving birth to the literal legend.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Jersey_Devil&oldid=1346806608', oldid: 1346806608 }]
+	},
+	{
+		slug: 'kelly-little-green-men',
+		name: 'Little Green Men',
+		territory: 'Kentucky',
+		classification: 'Extraterrestrial',
+		kind: 'other',
+		status: 'misidentification',
+		abstract:
+			'Diminutive, glowing extraterrestrial entities possessing a metallic, bullet-deflecting biology that enables them to terrorize rural farmhouses with impunity.',
+		gloss: 'Great horned owls were common at the site and match the described posture.',
+		etymology:
+			"Known as the 'Hopkinsville Goblins'. The 'green' moniker was artificially added by media sensationalism, as early reports described them exclusively as silver or dark figures.",
+		anatomy:
+			'Standing two to four feet tall, they feature large pointed ears, spindly legs, claw-like hands, and glowing yellow eyes. Their physiology appeared impenetrable, with witnesses claiming bullets sounded like they were striking a metal bucket.',
+		ecology:
+			'Manifested during a single chaotic evening in 1955 on an isolated rural farmhouse in Christian County, Kentucky.',
+		behavior:
+			'They exhibit highly persistent, unnerving behavior, floating through trees, popping up at doorways, and peering through windows for several hours.',
+		mythology:
+			"Five adults and seven children engaged in a four-hour gunfight with the creatures. The U.S. Air Force's Project Blue Book classified it as a hoax, while modern psychologists and skeptics study the event as a textbook example of mass excitement and misidentification of aggressive, bioluminescent great horned owls.",
+		sources: [
+			{
+				url: 'https://en.wikipedia.org/w/index.php?title=Kelly–Hopkinsville_encounter&oldid=1338867462',
+				oldid: 1338867462
+			}
+		]
+	},
+	{
+		slug: 'lizard-man-of-scape-ore-swamp',
+		name: 'Lizard Man',
+		territory: 'South Carolina',
+		classification: 'Reptilian Humanoid',
+		kind: 'humanoid',
+		status: 'unexplained',
+		abstract:
+			'A hostile, scaly reptilian humanoid that aggressively defends its swamp territory by ambushing and mauling passing vehicles.',
+		gloss: 'Damage to the 1988 vehicle was consistent with a large animal, unidentified.',
+		etymology:
+			'Named for its emergence from Scape Ore Swamp near Bishopville, South Carolina, and colloquially known as the Lizard Man of Lee County.',
+		anatomy:
+			'It is a green, perpetually wet creature standing 7 feet tall. Biologically, it is covered in heavy snake-like scales and features piercing red eyes and three-fingered hands.',
+		ecology: 'An amphibious predator native to the heavily wooded swamplands and roadsides of South Carolina.',
+		behavior:
+			'It acts as a terrifying ambush predator capable of chasing down vehicles driving 40 miles per hour. It violently leaps onto passing cars, biting and scratching the roofs and fenders of escaping drivers.',
+		mythology:
+			'The legend exploded in 1988 after teenager Chris Davis reported an attack. Skeptical investigators noted the physical impossibilities of the encounter, pointing out that Davis likely just startled a local butterbean farmer guarding his shed.',
+		sources: [
+			{
+				url: 'https://en.wikipedia.org/w/index.php?title=Lizard_Man_of_Scape_Ore_Swamp&oldid=1344432606',
+				oldid: 1344432606
+			}
+		]
+	},
+	{
+		slug: 'loveland-frogmen',
+		name: 'Loveland Frogmen',
+		territory: 'Ohio',
+		classification: 'Amphibian Humanoid / Hoax',
+		kind: 'humanoid',
+		status: 'misidentification',
+		abstract:
+			'Bipedal, amphibian humanoids that congregate near Ohio roadways, definitively identified by a police officer as an overgrown, tailless pet iguana.',
+		gloss: 'Officer Shockey identified the animal he shot in 1972 as a large iguana.',
+		etymology: 'Named after the city of Loveland, Ohio, and colloquially referred to as the Loveland lizard.',
+		anatomy:
+			'Legend describes them as 4-foot-tall humanoids with leathery skin and distinct frog faces. Biological reality, verified by the recovery of a corpse, confirmed the beast was simply a large, 3.5-foot-long pet iguana that had lost its tail, giving it a stunted, frog-like appearance.',
+		ecology: 'Sighted along the terrestrial roadsides and riverbanks bordering the Little Miami River in Ohio.',
+		behavior:
+			'Initially reported to scurry across roads and crouch like a frog before standing completely erect on its hind legs to navigate guardrails. Exaggerated folklore claimed they wielded magical wands that fired sprays of sparks.',
+		mythology:
+			'The legend achieved infamy following twin police sightings in 1972. While Officer Ray Shockey reported a monster, Officer Mark Matthews shot and killed the beast two weeks later, revealing the exotic pet hoax to the public, though the legend persists in local musicals and horror films.',
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Loveland_frog&oldid=1343012248', oldid: 1343012248 }]
+	},
+	{
+		slug: 'melon-heads',
+		name: 'Melon Heads',
+		territory: 'Connecticut',
+		classification: 'Mutant Humanoid',
+		kind: 'humanoid',
+		status: 'folkloric',
+		abstract:
+			'Highly aggressive, territorial humanoids with bulbous craniums that exhibit pack-hunting and cannibalistic behaviors in the remote woods of the Northeast.',
+		gloss: 'A legend attached to an asylum that never stood at the named site.',
+		etymology: 'Named directly for their bulbous, disproportionately large heads.',
+		anatomy:
+			'They are small humanoids characterized by massive, hairless craniums, bulging eyes, and malformed, wiry limbs. The swelling of their heads is medically attributed to extreme cases of hydrocephalus.',
+		ecology:
+			'They lurk deep within the secluded, forested areas and dirt roads of Fairfield and New Haven counties in Connecticut.',
+		behavior:
+			'They exhibit highly aggressive, territorial behavior, frequently emerging from hiding to bite and attack individuals who wander into their domain. In desperate winter conditions, they resort to cannibalism.',
+		mythology:
+			"Local Connecticut legends state they are the surviving, inbred descendants of either a burned-down 1960s asylum for the criminally insane or a colonial-era family banished for witchcraft. The tales frequently feature a secluded dirt road known as 'Dracula Drive', reflecting the merging of localized oral traditions.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Melon_heads&oldid=1335447866', oldid: 1335447866 }]
+	},
+	{
+		slug: 'menehune',
+		name: 'Menehune',
+		territory: 'Hawaii',
+		classification: 'Humanoid',
+		kind: 'humanoid',
+		status: 'folkloric',
+		abstract:
+			'Diminutive, nocturnal humanoids endemic to Hawaii that exhibit highly advanced, cooperative architectural behaviors under the cover of darkness.',
+		gloss: 'Folklorist Katharine Luomala argues the modern form of the legend postdates European contact.',
+		etymology:
+			"Anthropologists trace the term to the Polynesian 'manahune', originally denoting a people of lowly social status, which was later adapted into a diminutive definition.",
+		anatomy:
+			'They are a dwarf-like race of people, with most rare reports describing them as about two feet tall, though some claim they are as tiny as six inches. They are completely invisible to anyone except their own children and specific humans connected to them.',
+		ecology:
+			'They reside strictly within the deep forests and hidden valleys of the Hawaiian Islands, isolated from human settlements.',
+		behavior:
+			'They are superb, secretive craftspeople who operate exclusively during the night to construct massive temples, fishponds, roads, and canoes. If a project is not completed before dawn, they permanently abandon it. Their primary dietary staple is the banana.',
+		mythology:
+			'Hawaiian folklore attributes several still-existing architectural masterpieces to them, such as the Alekoko fishpond and Kīkīaola ditch. Folklorist Katharine Luomala argues the myth was generated post-European contact, blending indigenous terms with European tales of brownies and elves.',
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Menehune&oldid=1342493273', oldid: 1342493273 }]
+	},
+	{
+		slug: 'michigan-dogman',
+		name: 'Michigan Dogman',
+		territory: 'Michigan',
+		classification: 'Canine Humanoid',
+		kind: 'beast',
+		status: 'hoax',
+		abstract:
+			"A bipedal canine hominid that peacefully stalks the northern woodlands, whose modern mythology was inadvertently manufactured by a radio DJ's April Fool's song.",
+		gloss: 'Disc jockey Steve Cook wrote the creature into a 1987 April Fools song. Listeners then began reporting it.',
+		etymology: 'Known simply as the Dogman, describing its hybrid nature.',
+		anatomy:
+			'A seven-foot-tall, bipedal canine-like animal possessing the distinct torso of a man. It is characterized by piercing blue or amber eyes.',
+		ecology: 'Native to the dense forests of the Lower Peninsula of Michigan, particularly around the Manistee River.',
+		behavior:
+			'Despite unleashing a fearsome howl that sounds exactly like a human scream, it generally acts peacefully. Folklore claims it operates on a strict ten-year cycle, emerging exclusively in years ending in the number seven, and can be driven away by loud clapping.',
+		mythology:
+			"While early accounts stretch back to 1887 lumberjacks, the creature was utterly unknown to the modern public until 1987. Disc jockey Steve Cook completely fabricated the modern lore as an April Fool's joke via his song 'The Legend', only to be shocked when listeners called in claiming they had actually seen it.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Michigan_Dogman&oldid=1337592370', oldid: 1337592370 }]
+	},
+	{
+		slug: 'mogollon-monster',
+		name: 'Mogollon Monster',
+		territory: 'Arizona',
+		classification: 'Hominid',
+		kind: 'humanoid',
+		status: 'unexplained',
+		abstract:
+			'A pungent, territorial hominid of the Arizona wilderness whose towering stature and red eyes inspired indigenous legends of a cursed, exiled chief.',
+		gloss: 'Grizzlies, black bears, mountain lions and elk share the Rim and account for most reports.',
+		etymology:
+			'Named after the Mogollon Rim in Arizona, and sometimes colloquially referred to as the Arizona Bigfoot.',
+		anatomy:
+			'The creature is a bipedal hominid standing over seven feet tall with massive upper arms. Its body is covered in long black or reddish-brown hair, save for its chest, face, hands, and feet. It has a very square face with deep-set, expressionless red eyes. Biologically, it constantly emits an overwhelming stench of dead fish, decaying peat moss, and snapping turtle musk.',
+		ecology:
+			'It primarily inhabits the Ponderosa pine forests of the Mogollon Rim. Natural scientists note that grizzly bears, black bears, mountain lions, and elk share this habitat and likely account for many misidentifications.',
+		behavior:
+			'An omnivorous, nocturnal, and highly territorial primate. It walks with incredibly wide strides, leaving 22-inch footprints. It exhibits advanced predatory tactics, including mimicking the calls of coyotes and birds, hurling stones from hiding, building nests from pine needles, and decapitating deer prior to consumption.',
+		mythology:
+			'The oldest reported sighting dates back to an 1903 article in The Arizona Republican. Local folklore traces its origins to indigenous myths of a tormented Native American seeking revenge, an exiled chief, or a murderous pioneer who was strung up by spirits and skinned alive, transforming into a monster.',
+		sources: [
+			{ url: 'https://en.wikipedia.org/w/index.php?title=Mogollon_Monster&oldid=1335446464', oldid: 1335446464 }
+		]
+	},
+	{
+		slug: 'momo',
+		name: 'Momo',
+		territory: 'Missouri',
+		classification: 'Hominid',
+		kind: 'humanoid',
+		status: 'hoax',
+		abstract:
+			'A pungent, bipedal hominid that scavenged pets and frightened locals in the 1970s without ever becoming a major tourist attraction.',
+		gloss: 'The 1972 sightings ended with the tracks accounted for, and a theme park ride outlived the creature.',
+		etymology: "A portmanteau and abbreviation for the 'Missouri Monster'.",
+		anatomy:
+			'It is a massive, dark-haired bipedal humanoid standing 7 feet tall. It is distinctly characterized by a massive, pumpkin-shaped head and large, glowing orange eyes. It constantly emits a putrid, sickening odor.',
+		ecology: 'Native to the terrestrial forests and rural creek beds on the outskirts of Louisiana, Missouri.',
+		behavior:
+			'It acts as a terrifying scavenger. Unlike the elusive Bigfoot, Momo openly wandered into residential backyards, famously observed carrying the bloody remains of a deceased dog.',
+		mythology:
+			'A massive wave of sightings in 1972 prompted the city council and fire department to organize a 20-person armed posse to hunt the creature, though nothing was found. Despite the panic, the creature was honored with a theme park ride at Six Flags St. Louis that operated until 1994.',
+		sources: [
+			{ url: 'https://en.wikipedia.org/w/index.php?title=Momo_the_Monster&oldid=1345378980', oldid: 1345378980 }
+		]
+	},
+	{
+		slug: 'mothman',
+		name: 'Mothman',
+		territory: 'West Virginia',
+		classification: 'Flying Cryptid / Avian',
+		kind: 'bird',
+		status: 'misidentification',
+		abstract:
+			'A winged, glowing-eyed humanoid whose apocalyptic legend was heavily embellished by authors following initial sightings of out-of-migration avians.',
+		gloss: 'Wildlife biologists consistently attribute the sightings to misidentified sandhill cranes or large owls.',
+		etymology:
+			"Given the pop-culture moniker 'Mothman' by the press, despite the original sightings exclusively describing a 'bird-like' creature.",
+		anatomy:
+			'Reported as a slender, muscular, seven-foot-tall biped with ten-foot white wings and large, hypnotically glowing red eyes.',
+		ecology:
+			"Originally sighted around an abandoned World War II munitions plant known as the 'TNT area' in Point Pleasant, West Virginia.",
+		behavior:
+			"It is capable of chasing vehicles at high speeds while emitting a screeching sound. The 'glowing red eyes' are scientifically attributed to eyeshine reflecting off flashlights, a trait common in nocturnal animals like owls.",
+		mythology:
+			'Sighted between 1966 and 1967, the creature was later tied to UFOs and the tragic collapse of the Silver Bridge by author John Keel. Wildlife biologists consistently attribute the sightings to misidentified sandhill cranes or large owls.',
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Mothman&oldid=1347926662', oldid: 1347926662 }]
+	},
+	{
+		slug: 'northfield-pigman',
+		name: 'Northfield Pigman',
+		territory: 'Vermont',
+		classification: 'Mutant Humanoid',
+		kind: 'humanoid',
+		status: 'unexplained',
+		abstract:
+			"A mutated, swine-faced humanoid covered in white fur that exhibits psychological intimidation tactics by stalking high school students at the forest's edge.",
+		gloss: 'The record consists of one 1971 student report and its retellings.',
+		etymology: 'Named for its manifestation in Northfield, Vermont, and its distinct swine-like facial structure.',
+		anatomy:
+			'It possesses the bipedal physiology to walk perfectly upright like a man, but is covered entirely in coarse white fur. Biologically, it features the distinct head, snout, and features of a pig.',
+		ecology: 'Lurks in the dark shadows and dense woods surrounding the rural town of Northfield.',
+		behavior:
+			'It remains hidden in the tree line, emerging from the woods specifically to stalk and frighten local high school students and nighttime travelers before darting back into the shadows. It communicates through unsettling grunts.',
+		mythology:
+			'This localized rural legend gained traction in 1971 after the 1951 disappearance of teenager Sam Harris. It acts as a cautionary tale to keep children out of the woods, though no scientific evidence supports its existence.',
+		sources: [{ url: 'https://www.vermonter.com/vermont-pigman/', oldid: null }]
+	},
+	{
+		slug: 'okie-octopus',
+		name: 'Okie Octopus',
+		territory: 'Oklahoma',
+		classification: 'Cephalopod / Hoax',
+		kind: 'serpent',
+		status: 'hoax',
+		abstract:
+			'A horse-sized, freshwater cephalopod with sharp teeth that stalks teenagers in man-made lakes, whose entire existence was fabricated for a television mockumentary.',
+		gloss: 'No freshwater octopus exists. The account first appeared on a cable television programme.',
+		etymology:
+			'Commonly known as the Oklahoma Octopus, it lacks any authentic Native American or indigenous naming conventions.',
+		anatomy:
+			'A massive, freshwater cephalopod roughly the size of a horse. It physically resembles an octopus with leathery, reddish-brown skin and a terrifying set of sharp teeth.',
+		ecology:
+			'Allegedly inhabits the landlocked, human-made reservoirs of Lake Thunderbird and Tenkiller Ferry Lake in Oklahoma.',
+		behavior:
+			'It acts as a submerged apex predator that specifically targets and consumes human teenagers during the summer. Folklore hilariously suggests it travels terrestrially between the two lakes, a 170-mile journey that would take a giant octopus 150 hours of continuous walking.',
+		mythology:
+			"Despite rampant internet claims of 'ancient Native American legends', the cryptid has absolutely zero historical footprint. The legend was completely invented by the Animal Planet mockumentary show 'Lost Tapes' in 2008, exploiting public gullibility regarding localized monsters.",
+		sources: [{ url: 'https://www.jahernandez.com/', oldid: null }]
+	},
+	{
+		slug: 'pascagoula-river-aliens',
+		name: 'Pascagoula Aliens',
+		territory: 'Mississippi',
+		classification: 'Extraterrestrial / Robotic',
+		kind: 'other',
+		status: 'unexplained',
+		abstract:
+			'Technologically advanced, robotic extraterrestrials distinguished by their bizarre pincer-hands and non-lethal, investigative abduction behaviors.',
+		gloss: 'Both men passed polygraphs and neither ever profited from the account.',
+		etymology: 'Named for their 1973 manifestation along the Pascagoula River.',
+		anatomy:
+			'They are bizarre, humanoid creatures standing slightly over 5 feet tall. They possess distinct, crab-like pincers in place of hands, and their overall physiology is described as distinctly robotic or artificial.',
+		ecology:
+			'They operate from an oval-shaped, 30-to-40-foot-wide spacecraft equipped with flashing blue lights, capable of hovering silently above terrestrial ground.',
+		behavior:
+			'They exhibit purely investigative, scientific behaviors. They approach silently with a whirring sound, paralyze their targets, and levitate them aboard their craft to conduct localized biological examinations on human subjects before returning them unharmed.',
+		mythology:
+			'They achieved global infamy in 1973 when they allegedly abducted and experimented on night-fishermen Charles Hickson and Calvin Parker. The incident remains one of the most widely publicized close encounters in UFOlogy, although skeptics suggest the entire event was a waking dream state or a hoax born of the 1973 UFO flap.',
+		sources: [
+			{ url: 'https://en.wikipedia.org/w/index.php?title=Pascagoula_incident&oldid=1347235973', oldid: 1347235973 }
+		]
+	},
+	{
+		slug: 'rougarou-loup-garou',
+		name: 'Rougarou',
+		territory: 'Louisiana',
+		classification: 'Werewolf / Shapeshifter',
+		kind: 'beast',
+		status: 'folkloric',
+		abstract:
+			'A predatory shapeshifter endemic to the Louisiana bayous, born of a genetic or supernatural curse that triggers violent, lupine transformations.',
+		gloss: 'A French loup-garou carried to the bayou and used to enforce Lenten discipline.',
+		etymology:
+			"Derived as a Cajun and Creole variant of the traditional French 'loup-garou', meaning a man who transforms into an animal.",
+		anatomy:
+			'It is most frequently described as possessing a human body with the head of a wolf or dog, heavily mirroring traditional werewolf physiology. Depending on the specific curse, it may also manifest as an animal-hybrid such as a were-cow or pig.',
+		ecology: 'Prowls the deep swamps, woodlands, and sugar cane fields of Acadiana and Greater New Orleans.',
+		behavior:
+			'A blood-sucking nocturnal predator. It is a simple-minded beast, compelled by biology to stop and count objects; placing 13 items at a door keeps it at bay, as it cannot count past 12.',
+		mythology:
+			"Spread by French Canadian immigrants, the legend was utilized heavily by elders to enforce Catholic obedience, warning that breaking Lent seven years in a row induces the transformation. A person remains under the spell for 101 days until transferring the curse by drawing another human's blood.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Rougarou&oldid=1347372273', oldid: 1347372273 }]
+	},
+	{
+		slug: 'selbyville-swamp-monster',
+		name: 'Swamp Monster',
+		territory: 'Delaware',
+		classification: 'Hominid / Hoax',
+		kind: 'humanoid',
+		status: 'hoax',
+		abstract:
+			"A bipedal, ape-like hominid haunting Delaware's swamps whose natural nocturnal behavior was definitively proven to be a localized newspaper hoax.",
+		gloss: 'A raccoon coat and a mask, worn by actor Fred Stevens for a newspaper circulation stunt.',
+		etymology: 'Named after the town of Selbyville and its proximity to the Great Cypress Swamp.',
+		anatomy:
+			'Witnesses reported a frightening, hairy, ape-like creature. In reality, its physiology consisted entirely of a large, vintage raccoon coat and an awkward, oversized mask worn by a human actor.',
+		ecology:
+			'Reported to lurk heavily along the wooded areas and traveled roads of the Great Cypress Swamp (also known as Burnt Swamp) in southern Delaware.',
+		behavior:
+			'It deliberately sprinted along Cypress Road and made loud noises specifically to ensure it was seen by passing motorists.',
+		mythology:
+			"The legend achieved fever-pitch in 1964 but was a completely fabricated stunt orchestrated by 'Delmarva News' editor Ralph Grapperhaus and actor Fred Stevens to jump-start stalling newspaper subscriptions. Decades later, Stevens confessed the ruse and revealed the mask to a reporter.",
+		sources: [
+			{
+				url: 'https://friendsofbigshout.com/the-selbyville-swamp-monster-the-black-widow-spiders-of-lower-delaware/',
+				oldid: null
+			}
+		]
+	},
+	{
+		slug: 'sharlie',
+		name: 'Sharlie',
+		territory: 'Idaho',
+		classification: 'Lake Monster / Aquatic Reptile',
+		kind: 'serpent',
+		status: 'unexplained',
+		abstract:
+			'A prehistoric, dinosaur-like lake predator that employs a specialized camouflage technique, mimicking a floating log before ambushing prey.',
+		gloss: 'Named by newspaper competition in 1954. No physical record exists.',
+		etymology:
+			"Originally dubbed 'Slimy Slim' by the national press, it was officially renamed 'Sharlie' in a 1954 newspaper contest honoring a popular radio catchphrase 'Vas you der, Sharlie?'.",
+		anatomy:
+			'A sea serpent measuring 30 to 40 feet in length. It possesses shell-like skin, camel-like humps, a dinosaur-type head, and heavily pronounced jaws.',
+		ecology: 'Thrives in the deep, alpine freshwater environment of Payette Lake near McCall, Idaho.',
+		behavior:
+			'It acts as a stealthy aquatic predator, frequently remaining motionless to perfectly mimic a floating log before suddenly revealing its reptilian form. When swimming, it moves rapidly, continually diving and creating a wake equivalent to a small motorboat.',
+		mythology:
+			'Predating Western settlement, Native American legends warned of an evil spirit dwelling in the lake. Modern sightings began in 1920 by timber workers and persisted regularly through 1997.',
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Sharlie&oldid=1335447039', oldid: 1335447039 }]
+	},
+	{
+		slug: 'shunka-warak-in',
+		name: "Shunka Warak'in",
+		territory: 'Montana',
+		classification: 'Canine Predator',
+		kind: 'beast',
+		status: 'misidentification',
+		abstract:
+			'A hyena-like canine predator whose genetic lineage fueled intense debate after infiltrating Native American settlements, before DNA testing finally proved it to be a mundane wolf.',
+		gloss: 'A similar animal shot in 2018 was DNA tested and returned an ordinary grey wolf.',
+		etymology:
+			"Derived from the Ioway Sioux myth 'shunka warak'in', which translates directly to 'carries off dogs'. Amateur taxidermist Joseph Sherwood dubbed it a 'ringdocus'.",
+		anatomy:
+			'It is a freakish, wolf-like beast with a nearly black coat bearing a hint of stripes on its flanks. Biologically, it features unusually short legs and a sloped back heavily resembling an African hyena.',
+		ecology: 'Native to the Madison Valley of the Rocky Mountains in Montana.',
+		behavior:
+			'A hyper-aggressive predator that actively snatched unwary dogs and attacked homestead livestock. When fatally wounded, it produced a terrifying, feminine scream and violently thrashed itself to death attempting to kill a pioneer family.',
+		mythology:
+			'Shot by Israel Hutchins in 1886, its taxidermy mount became a legendary museum oddity. Modern cryptozoologists insisted it was an undocumented prehistoric survivor, but a similar beast shot in 2018 underwent DNA analysis and was proven to be nothing more than an ugly, purebred grey wolf.',
+		sources: [{ url: 'https://distinctlymontana.com', oldid: null }]
+	},
+	{
+		slug: 'sink-hole-sam',
+		name: 'Sink Hole Sam',
+		territory: 'Kansas',
+		classification: 'Aquatic Cryptid / Hoax',
+		kind: 'serpent',
+		status: 'hoax',
+		abstract:
+			"A massive, snake-like aquatic anomaly whose origins stem directly from the satirical 'foopengerkle' newspaper columns of a 1950s journalist.",
+		gloss: 'Ernest Alva Dewey wrote it as satire and classified it as a Foopengerkle.',
+		etymology:
+			"Affectionately dubbed 'Sink Hole Sam', it was officially classified as a 'Foopengerkle' or 'Ball-tailed Snickelhoopus' by humorous local journalist Ernest Alva Dewey.",
+		anatomy:
+			'An eel-like or snake-like creature measuring 15 feet in length and twenty-one inches thick. It features a flat head, a long dorsal fin, a distinctively fluted tail, and a wide, Cheshire-like grin.',
+		ecology:
+			'Reported initially in a drought-dried, 100-acre sinkhole near Inman, Kansas. By the 1960s, the legend relocated geographically to the swampy environments of Kingman State Lake.',
+		behavior:
+			'It undulates through the water in a snake-like fashion. Initially described as a harmless, terribly dumb vegetarian by its satirical creator, later adaptations reported it actively tripping horses and dragging calves into the swamp.',
+		mythology:
+			"Though supposedly spotted by two Mennonite fishermen, the legend was aggressively popularized by Ernest Alva Dewey's satirical articles in the 1950s, which facetiously claimed the extinct creature was responsible for UFO sightings. Despite its fictional roots, the creature spurred massive local monster-hunting tourism.",
+		sources: [{ url: 'https://thecryptidatlas.com/sinkhole-sam/', oldid: null }]
+	},
+	{
+		slug: 'skunk-ape',
+		name: 'Skunk Ape',
+		territory: 'Florida',
+		classification: 'Hominid / Primate',
+		kind: 'humanoid',
+		status: 'unexplained',
+		abstract:
+			'A foul-smelling, bipedal hominid that utilizes the expansive swamps of the Florida Everglades to evade human detection.',
+		gloss:
+			'Skeptics identify the animal as a Florida black bear with mange. The 2000 Myakka photographs read as an escaped orangutan.',
+		etymology:
+			"Commonly called the Swamp Ape, it earned the 'Skunk Ape' moniker due to its horrific, skunk-like odor. Unsubstantiated cryptozoology claims state Seminole cultures called it 'Esti Capcaki', meaning 'Furry Tall Man'.",
+		anatomy:
+			'It is a bipedal primate covered in mottled reddish-brown hair. Standing 5 to 7 feet tall, it is generally smaller in stature than its northern Bigfoot cousin.',
+		ecology:
+			'Native to the dense swamps and forests of the southeastern United States, primarily utilizing the vast Florida Everglades. Skeptics suggest the animal is actually a local Florida black bear suffering from mange.',
+		behavior:
+			'It is a secretive creature that occasionally invades human areas, allegedly stealing apples from porches, raiding lima bean wildlife bait stands, and even killing livestock. It relies on its potent odor to deter threats.',
+		mythology:
+			"Sightings peaked between the 1950s and 1970s, making it an unofficial rural mascot of Florida wilderness. In 1977, the state legislature even saw a failed bill attempting to make it illegal to 'take, possess, harm or molest' the creature.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Skunk_ape&oldid=1347726463', oldid: 1347726463 }]
+	},
+	{
+		slug: 'slide-rock-bolter',
+		name: 'Slide-Rock Bolter',
+		territory: 'Colorado',
+		classification: 'Fearsome Critter / Terrestrial Cetacean',
+		kind: 'beast',
+		status: 'folkloric',
+		abstract:
+			'A massive, highly specialized terrestrial ambush predator that historically triggered destructive landslides to consume prey in the steep Colorado mountains.',
+		gloss:
+			'Invented by lumberjacks around 1910 as a fearsome critter tale. No sighting has ever been claimed in earnest.',
+		etymology:
+			"Taxonomically classified in 1910 folklore as 'Macrocrossos', it is colloquially known as the 'mountain whale'.",
+		anatomy:
+			'Possessing a distinct cetacean physiology, it features an immense head, small eyes, and a massive mouth resembling a sculpin. Its specialized tail consists of a divided flipper equipped with enormous grab-hooks. It secretes a thin biological skid grease from the corners of its mouth to accelerate its movement.',
+		ecology:
+			'Inhabited exclusively steep mountain country where slopes exceeded a 45-degree angle, particularly in southwestern Colorado.',
+		behavior:
+			'An apex ambush predator, it anchors itself to mountain ridges using its tail hooks, waiting motionless for days. Upon sighting a tourist, it releases its hold, utilizing its drooled skid grease to toboggan down the slope, scooping up its victim and using its momentum to carry itself up the opposing slope.',
+		mythology:
+			"Invented by early 20th-century American lumberjacks as a 'fearsome critter' tale to frighten newcomers. The myth served as a cultural metaphor for the extreme environmental devastation and economic instability inflicted upon the Colorado landscape by rapid, greedy mining and logging expansions.",
+		sources: [{ url: 'https://wanderingwhaleroad.com', oldid: null }]
+	},
+	{
+		slug: 'snallygaster',
+		name: 'Snallygaster',
+		territory: 'Virginia',
+		classification: 'Demonic Bird',
+		kind: 'bird',
+		status: 'hoax',
+		abstract:
+			'A heavily armored, demonic avian chimera with a metallic beak and tentacles whose myth was resurrected by newspapermen to exploit regional superstitions.',
+		gloss: 'A 1909 circulation stunt by the Middletown Valley Register, later admitted in print.',
+		etymology: "Derived from the German 'Schneller Geist', meaning 'quick ghost'.",
+		anatomy:
+			'It is a demonic, bird-reptile chimera equipped with enormous wings, claws like steel hooks, and a long-pointed metallic bill lined with razor-sharp teeth. It possesses a bulletproof hide, a single eye in the center of its forehead, and octopus-like tentacles.',
+		ecology: 'An aerial predator patrolling the skies of Central Maryland and the Shenandoah regions of Virginia.',
+		behavior:
+			'It swoops silently from the sky to pick up and carry off its victims, historically rumored to suck their blood. It emits terrifying screeches that sound like a locomotive whistle, but can be repelled by seven-pointed stars painted on barns.',
+		mythology:
+			"Originating in the superstitions of 18th-century German immigrants, the monster achieved national fame in 1909. The flap was later revealed to be a sensationalistic hoax perpetrated by the 'Middletown Valley Register' to boost readership.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Snallygaster&oldid=1341951891', oldid: 1341951891 }]
+	},
+	{
+		slug: 'specter-moose',
+		name: 'Specter Moose',
+		territory: 'Maine',
+		classification: 'Spirit / Cervid',
+		kind: 'beast',
+		status: 'unexplained',
+		abstract:
+			'An ethereal, cloud-colored cervid standing fifteen feet tall that exhibits peaceful, bulletproof grazing behaviors while faintly glowing in the northern forests.',
+		gloss: 'Pale coats occur naturally in moose. No specimen of the reported size has been recorded.',
+		etymology: 'Named for its ghostly, luminous white appearance and seemingly supernatural ability to vanish.',
+		anatomy:
+			"An impossible colossus standing 10 to 15 feet tall at the shoulder and weighing an estimated 2,500 pounds. It features a ghostly gray or white coat, a double mane, an 18-inch 'bell' under its chin, and a massive 10 to 12-foot antler span bearing up to 22 points on each side. Notably, it possesses normal brown eyes, ruling out pure biological albinism.",
+		ecology: 'Native to the dense, remote woodlands around Lobster Lake, Maine.',
+		behavior:
+			'It acts as a phantom of the forest, appearing and disappearing at will. It exhibits profound invulnerability, casually absorbing repeated point-blank rifle shots without flinching or bleeding.',
+		mythology:
+			'First spotted by hunting guide Clarence Duffy in 1891, it became a massive media sensation in the early 20th century. Locals consider it less of a biological animal and more of a guardian spirit representing the untamed wild of Maine.',
+		sources: [
+			{
+				url: 'https://hangar1publishing.com/blogs/cryptids/the-mystique-of-the-specter-moose-maines-legendary-cryptid',
+				oldid: null
+			}
+		]
+	},
+	{
+		slug: 'squonk',
+		name: 'Squonk',
+		territory: 'Pennsylvania',
+		classification: 'Fearsome Critter',
+		kind: 'beast',
+		status: 'folkloric',
+		abstract:
+			'A deeply reclusive, warty woodland creature possessing a unique defense mechanism that allows it to completely dissolve into a pool of its own tears to escape capture.',
+		gloss:
+			'Also from the lumber camps of the Pennsylvania hemlock forests. The dissolution is the punchline, not a report.',
+		etymology:
+			"Formally granted the pseudo-scientific taxonomy 'Lacrimacorpus dissolvens', derived from Latin meaning 'tear', 'body', and 'dissolve'.",
+		anatomy:
+			'It is a miserable, physically unappealing creature covered entirely in warts and moles. It is draped in extremely saggy, misfitting skin and features webbed toes exclusively on its left feet.',
+		ecology:
+			'Inhabits the terrestrial hemlock forests of northern Pennsylvania. Lore suggests they migrated from deserts to swamps before settling alongside logging camps.',
+		behavior:
+			'Overwhelmed by deep psychological shame regarding its hideous appearance, it constantly sheds tears. It travels exclusively at twilight and avoids moonlit bodies of water so it cannot see its own reflection. When cornered by hunters tracking its tear-stained trail, it triggers a biological superpower to literally dissolve into a puddle of tears.',
+		mythology:
+			"Originating in the 1910 book 'Fearsome Creatures of the Lumberwoods', it remains a beloved piece of lumberjack folklore. Its name was even adopted into scientific literature to describe chemical molecules that dissolve or decompose upon capture.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Squonk&oldid=1336374361', oldid: 1336374361 }]
+	},
+	{
+		slug: 'tahoe-tessie',
+		name: 'Tahoe Tessie',
+		territory: 'Nevada',
+		classification: 'Aquatic Serpent',
+		kind: 'serpent',
+		status: 'unexplained',
+		abstract:
+			'A gargantuan, plesiosaur-like aquatic serpent that utilizes an expansive network of underwater caves to remain hidden within the depths of Lake Tahoe.',
+		gloss: 'Scientists attribute the moving shapes to wind patterns and to unusually large sturgeon.',
+		etymology: "Named Tahoe Tessie as Lake Tahoe's direct, affectionate equivalent to Scotland's Nessie.",
+		anatomy:
+			'It is an enormous serpent-like monster with smooth, gray or turquoise skin. Sighting estimates claim it stretches over 600 feet in length and possesses a head 14 feet wide.',
+		ecology:
+			'Inhabits the deep, 1,645-foot waters of Lake Tahoe, which straddles the California and Nevada border. Biologists suggest its massive ecosystem of rainbow trout and kokanee salmon could easily support a large, undocumented predator.',
+		behavior:
+			'An elusive swimmer that rarely surfaces, preferring to remain hidden within subterranean lake caverns. When it does surface, it creates a massive wake and noticeable whitecaps.',
+		mythology:
+			'Its roots tie into ancient Washoe legends of powerful water spirits, specifically the Water Babies and a giant bird called Ong. Modern scientists attribute the dark, moving shapes to wind patterns creating optical illusions, or the presence of exceptionally massive, prehistoric-looking sturgeon.',
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Tahoe_Tessie&oldid=1335447633', oldid: 1335447633 }]
+	},
+	{
+		slug: 'taku-he',
+		name: 'Taku-He',
+		territory: 'South Dakota',
+		classification: 'Hominid',
+		kind: 'humanoid',
+		status: 'folkloric',
+		abstract:
+			'A towering, bipedal hominid paradoxically observed wearing human clothing while engaging in the brutal, specialized mutilation of local cattle on the open plains.',
+		gloss: 'Tied to the 1970s cattle mutilation panic, itself explained by ordinary scavengers.',
+		etymology:
+			"Derived from Lakota mythology, the name translates directly to 'big man'. It was later dubbed the 'McLaughlin Monster' by the press.",
+		anatomy:
+			'It is a towering, hairy gentleman standing remarkably tall with glowing red eyes. Biologically, it leaves massive, 18-inch-long footprints spaced over 4 feet apart, indicating an enormous bipedal stride.',
+		ecology:
+			'Frequents the wide-open plains, dense ravines, and highly active regions like Sica Hollow State Park in South Dakota.',
+		behavior:
+			'Despite being seen as a benevolent guardian spirit in ancient lore, modern iterations depict it as an aggressive predator. It is known to stare creepily at witnesses and has been blamed for terrifying cattle mutilations.',
+		mythology:
+			'A massive wave of 28 sightings in 1977 triggered a full-scale manhunt by tribal police. The creature remains an enduring enigma, tightly weaving ancient Lakota spiritualism with modern, sensationalized cryptozoology.',
+		sources: [
+			{
+				url: 'https://hangar1publishing.com/blogs/cryptids/taku-he-a-deep-dive-into-south-dakotas-bigfoot-sightings',
+				oldid: null
+			}
+		]
+	},
+	{
+		slug: 'tennessee-wildman',
+		name: 'Tennessee Wildman',
+		territory: 'Tennessee',
+		classification: 'Hominid',
+		kind: 'humanoid',
+		status: 'unexplained',
+		abstract:
+			'A stout, highly aggressive hominid with dark ginger hair that fiercely defends its territory with weaponized stone-throwing and targeted abductions.',
+		gloss: 'Reports are concentrated in two counties and rely on a single family of witnesses.',
+		etymology: "Known locally as the 'Wild Man of Chilhowee' or simply the Tennessee Wildman.",
+		anatomy:
+			'It is a stout hominid standing 7 to 9 feet tall, covered in a matted mass of dark gray or reddish-brown hair extending below its waist. It features fiery red eyes, sharp tusks, and terrifying talon-like fingernails. It radiates an overpowering stench of skunk spray and rotting meat.',
+		ecology: 'Inhabits the rugged wilderness and dense forests of McNairy County, Tennessee.',
+		behavior:
+			'Fierce and completely untameable, it exhibits immense muscular power and blinding speed, easily outpacing vehicles. Highly aggressive, it produces bone-chilling screams and shows a predatory preference for chasing women and dogs.',
+		mythology:
+			"First documented by the Hagerstown Mail in 1871, the beast represents a localized adaptation of the European 'wild man' archetype. Skeptics attribute the terrifying encounters to misidentified bears standing on their hind legs.",
+		sources: [
+			{
+				url: 'https://hangar1publishing.com/blogs/cryptids/the-mysterious-tennessee-wildman-legends-and-sightings',
+				oldid: null
+			}
+		]
+	},
+	{
+		slug: 'teratorns',
+		name: 'Teratorns',
+		territory: 'New Mexico',
+		classification: 'Prehistoric Avian',
+		kind: 'bird',
+		status: 'unexplained',
+		abstract:
+			'A colossal, prehistoric avian predator with a twelve-foot wingspan whose factual biological history has been co-opted into modern cryptid mythology.',
+		gloss: 'Teratornis merriami is real and extinct. Reports of living birds are unverified.',
+		etymology:
+			"Derived from the Greek 'teras' (wonder or monster) and 'ornis' (bird), scientifically classified as Teratornis merriami.",
+		anatomy:
+			'It was an airplane-sized predatory bird possessing an enormous wingspan of up to 12.5 feet, standing 30 inches tall, and weighing roughly 30 pounds. Biologically, its massive hooked beak allowed it to swallow small prey entirely whole.',
+		ecology:
+			'An apex aerial predator of Pleistocene North America that thrived in cliff terrains to facilitate easy take-offs, relying heavily on terrestrial megafauna carrion.',
+		behavior:
+			'It acted as an active predator and a heavy scavenger. It possessed legs too short to take flight by running on flat ground. It frequented the La Brea Tar Pits, utilizing its large bill to open the body cavities of trapped megafauna before becoming mired in the asphalt itself.',
+		mythology:
+			'Although a completely factual, scientifically documented bird that went extinct 10,000 years ago, cryptid enthusiasts persistently claim the dinosaur refused to stay extinct and continues to fly through the modern skies of the Southwest.',
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Teratornis&oldid=1343366298', oldid: 1343366298 }]
+	},
+	{
+		slug: 'thunderbird',
+		name: 'Thunderbird',
+		territory: 'North Dakota',
+		classification: 'Magical Avian',
+		kind: 'bird',
+		status: 'folkloric',
+		abstract:
+			'An immense, vividly colored avian cryptid whose unique physiology allows it to manipulate atmospheric conditions and project bio-electric lightning from its wings.',
+		gloss: 'A figure of Plains and Northwest Coast cosmology rather than a reported animal.',
+		etymology: 'Named for its supernatural mastery over storms, thunder, and lightning.',
+		anatomy:
+			'It is a massive, very colorful bird displaying vivid yellow and red tints across its plumage. It possesses a thick neck and an awe-inspiring wingspan documented at 12 feet across.',
+		ecology: 'Dominates the aerial ecosystems and open plains over North Dakota.',
+		behavior:
+			'A highly active, magical avian capable of physically stirring up massive storms and manipulating weather patterns during flight.',
+		mythology:
+			'Theorized to be a magical cousin of the prehistoric New Mexico Teratorn, the Thunderbird is deeply ingrained in indigenous lore and comes equipped with supernatural abilities, including shooting lightning bolts directly from its wings.',
+		sources: [{ url: 'https://cryptidz.fandom.com/wiki/Thunderbird', oldid: null }]
+	},
+	{
+		slug: 'tizheruk',
+		name: 'Tizheruk',
+		territory: 'Alaska',
+		classification: 'Sea Serpent',
+		kind: 'serpent',
+		status: 'folkloric',
+		abstract:
+			'A massive, serpentine marine predator of the Bering Sea that utilizes its ability to compress its body to navigate shallow waters and ambush terrestrial prey.',
+		gloss: 'Recorded in Inuit oral tradition and in carved ivory rather than in sighting reports.',
+		etymology:
+			"In the Inupiaq language, 'Tizheruk' translates to 'the long-tailed one'. It is also known as Pal-Rai-Yûk or Tisikpuk.",
+		anatomy:
+			'A sea serpent measuring up to 15 feet in length, characterized by a disproportionately massive head that can stretch up to 7 feet long. Biological accounts vary significantly; some describe a transparent, eel-like body that reveals the contents of its stomach, while others describe a thick-furred beast with a nightmare hybrid of crocodile and wolf facial features.',
+		ecology:
+			'Inhabits the frigid coastal marine environments of the Bering Sea, though it is biologically capable of venturing inland via shallow rivers and streams.',
+		behavior:
+			'A solitary and stealthy ambush predator that possesses the terrifying biological ability to compress its massive body, allowing it to slip through creeks barely a foot deep. It snatches victims from piers without a sound or splash, and is allegedly attracted by tapping noises on boat hulls.',
+		mythology:
+			'Deeply ingrained in Inuit oral tradition, it serves as a cultural symbol representing the profound dangers and mysteries of the natural ecosystem and the balance between humans and nature. The creature features heavily in Inuit art, carved into ivory and etched onto bone.',
+		sources: [
+			{
+				url: 'https://hangar1publishing.com/blogs/cryptids/discover-the-tizheruk-alaska-the-mythical-sea-serpent-of-inuit-folklore',
+				oldid: null
+			}
+		]
+	},
+	{
+		slug: 'vampire-mercy-brown',
+		name: 'Mercy Brown',
+		territory: 'Rhode Island',
+		classification: 'Vampire / Undead',
+		kind: 'other',
+		status: 'misidentification',
+		abstract:
+			'An undead biological anomaly perfectly preserved against extreme winter elements, feeding parasitically on the life force of her surviving genetic relatives.',
+		gloss: 'Tuberculosis, and a body that had spent the winter in a freezing crypt.',
+		etymology: 'Named after the deceased 19th-century Rhode Island resident, young Mercy Lena Brown.',
+		anatomy:
+			'Despite being dead and buried during the coldest winter, her exhumed corpse was found to be biologically immaculate and perfectly preserved, indicating supernatural vampirism to the superstitious locals.',
+		ecology: 'Interred in the frozen graveyard of the Baptist Church in Exeter, Rhode Island.',
+		behavior:
+			'Operating as an undead parasite, she was believed to systematically target and drain the life from her surviving living relatives.',
+		mythology:
+			"When George Brown's relatives kept dying without medical explanation in 1892, panicked locals dug up the graves to investigate. Diagnosing her as a vampire, they burned her heart and liver to create a tonic for her sick brother, who tragically died two months later.",
+		sources: [
+			{
+				url: 'https://en.wikipedia.org/w/index.php?title=Mercy_Brown_vampire_incident&oldid=1343162425',
+				oldid: 1343162425
+			}
+		]
+	},
+	{
+		slug: 'van-meter-monster',
+		name: 'Van Meter Monster',
+		territory: 'Iowa',
+		classification: 'Flying Cryptid',
+		kind: 'bird',
+		status: 'unexplained',
+		abstract:
+			'A bioluminescent, chiropteran humanoid whose blinding cranial horn and deafening vocalizations terrified miners before its retreat into subterranean cave systems.',
+		gloss: 'Several townspeople across five nights in 1903, no physical evidence, and no recurrence in a century.',
+		etymology: 'Named after the rural farming community of Van Meter, Iowa.',
+		anatomy:
+			'A bizarre, half-human half-animal entity standing eight feet tall. It is equipped with smooth, leathery bat-wings and a blunt horn protruding from its forehead that emits a blinding, searchlight-like beam. It is completely impervious to close-range bullet impacts.',
+		ecology:
+			'It operated terrestrially at night, but retreated into the subterranean depths of an abandoned local coal mine.',
+		behavior:
+			'Capable of immense speed, flight, and leaping seamlessly between building rooftops. As a defense mechanism against human attacks, it emits an overpowering, noxious stench capable of rendering an adult man unconscious.',
+		mythology:
+			'Appearing over a few nights in 1903, the town formed a heavily armed posse and permanently sealed the creature inside a mine shaft with heavy planks. The town now hosts an annual Van Meter Visitor Festival to commemorate the unearthly event.',
+		sources: [
+			{
+				url: 'https://hangar1publishing.com/blogs/cryptids/winged-wonder-or-wicked-hoax-iowas-van-meter-monster',
+				oldid: null
+			}
+		]
+	},
+	{
+		slug: 'wendigo',
+		name: 'Wendigo',
+		territory: 'Minnesota',
+		classification: 'Cursed Human / Spirit',
+		kind: 'other',
+		status: 'folkloric',
+		abstract:
+			'A gaunt, cannibalistic spirit of the freezing northern forests that serves as a cultural metaphor for greed and a psychiatric classification for culture-bound starvation psychosis.',
+		gloss: 'A moral figure of Algonquian tradition. Treat it with more care than the rest of this register.',
+		etymology:
+			"Derived from the Algonquian languages, including the Ojibwe 'wiindigoo' and Cree 'wīhtikōw', with proto-Algonquian roots potentially translating to 'owl'.",
+		anatomy:
+			'It is a gigantic humanoid, gaunt to the point of extreme emaciation, with ash-gray, desiccated skin pulled tightly over protruding bones. It features deeply sunken eyes, tattered bloody lips, and supposedly possesses a heart of ice. It constantly emits a foul odor of decay and corruption.',
+		ecology:
+			'Strongly associated with the freezing, famine-prone boreal forests of the North. Natural Prey: Human beings.',
+		behavior:
+			'Driven by an insatiable, cannibalistic metabolism, it hunts humans relentlessly. In some folklore, it retains human cognition and speech, exhibiting intelligent tool use, autocannibalism, and the cruel ability to taunt its victims before devouring them.',
+		mythology:
+			"Originating in Algonquian folklore as a cautionary tale against greed and taboo cannibalism during harsh winters, the creature gave its name to 'Wendigo psychosis'—a culture-bound psychiatric syndrome characterized by an intense craving for human flesh. Modern scholars also heavily utilize the entity as a metaphor for the destructive, consuming nature of colonialism and ecological destruction.",
+		sources: [{ url: 'https://en.wikipedia.org/w/index.php?title=Wendigo&oldid=1345324133', oldid: 1345324133 }]
+	},
+	{
+		slug: 'white-thang',
+		name: 'White Thang',
+		territory: 'Alabama',
+		classification: 'Hominid / Ursine',
+		kind: 'humanoid',
+		status: 'folkloric',
+		abstract:
+			'An elusive, stark-white bipedal hominid native to the humid forests of Alabama whose ghostly appearance fuels deep-rooted rural superstitions.',
+		gloss: 'Skeptics read the reports as albino bears. The legend behaves like a ghost story.',
+		etymology: "Colloquially named the 'White Thang' by locals.",
+		anatomy:
+			'A tall, powerfully built bipedal entity covered entirely in stark white or pale luminous fur. Observers note its unnerving ability to move with complete silence and fluidity through dense undergrowth, and inexplicably emits a low, guttural growl that resonates through the ground, accompanied by a distinct musky odor.',
+		ecology:
+			'Native to the dense woodlands of Morgan, Etowah, and Jefferson counties, as well as the remote, heavily wooded, and swampy regions of the Black Warrior National Forest.',
+		behavior:
+			'An elusive, silent observer that prefers to remain hidden in the dense wilderness. It establishes its territory by leaving large white footprints in soft earth and emitting mournful, soul-piercing howls after dark.',
+		mythology:
+			'Documented sightings since the 1940s have fueled local debates over its true nature, with skeptics attributing the encounters to albino bears, while others believe it to be an albino variant of Bigfoot. It serves as a potent, chilling reminder that even in our modern, seemingly explored world, pockets of profound mystery remain.',
+		sources: [
+			{
+				url: 'https://strangeandtwisted.com/blogs/stories/the-alabama-white-thang-a-deep-dive-into-the-souths-most-ethereal-cryptid',
+				oldid: null
+			}
+		]
+	},
+	{
+		slug: 'wood-devils',
+		name: 'Wood Devils',
+		territory: 'New Hampshire',
+		classification: 'Hominid / Spirit',
+		kind: 'humanoid',
+		status: 'folkloric',
+		abstract:
+			'Sleek, gray-haired hominids adapted for extreme speed and perfect arboreal camouflage, originally invented to frighten lumberjacks in the Great North Woods.',
+		gloss: 'Invented in the 1930s to haze new lumber camp employees, then reported in earnest.',
+		etymology: 'Locally termed the Woods Devil of Coos County.',
+		anatomy:
+			'They are a lanky, exceptionally thin cousin to Bigfoot, standing up to eight feet tall. They are covered entirely in matted gray hair and possess an elongated facial structure that closely resembles a horse or a moose.',
+		ecology:
+			'Native to the vast, 4.7 million-acre isolated forest ecosystems of Coos County and Dixville Notch in New Hampshire.',
+		behavior:
+			'Highly elusive and incredibly shy, they possess an unparalleled biological aptitude for camouflage, standing perfectly still to blend seamlessly behind tree trunks. If pursued or frightened, they exhibit an extreme flight response, emitting an otherworldly, echoing screech as they scarper into the night.',
+		mythology:
+			"Emerging in the 1930s, the creature was originally part of a pantheon of 'fearsome critters' invented entirely by veteran lumberjacks to haze and terrify new employees. Decades later, hunters began reporting genuine encounters, cementing the legend.",
+		sources: [
+			{
+				url: 'https://www.nhstateparks.org/NHStateParks/media/NHStateParks/PDFs/SCA%20Blog%20docs/mystery-in-the-great-north-woods-what-is-the-woods-devil.pdf',
+				oldid: null
+			}
+		]
+	}
+]

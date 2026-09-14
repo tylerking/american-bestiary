@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<title>%sveltekit.status% · American Bestiary</title>
+		<meta name='theme-color' content='#C9B78D' media='(prefers-color-scheme: light)' />
+		<meta name='theme-color' content='#1B140C' media='(prefers-color-scheme: dark)' />
+		<style>
+			@font-face {
+				font-family: 'Fraunces';
+				font-style: normal;
+				font-weight: 100 900;
+				font-display: swap;
+				src: url('/fonts/Fraunces-Variable.woff2') format('woff2-variations');
+			}
+			:root {
+				color-scheme: light;
+				--vellum: #E9DDC0;
+				--ink: #2E2519;
+				--rule: #C9B78D;
+				--vermilion: #9E2F1E;
+			}
+			@media (prefers-color-scheme: dark) {
+				:root {
+					color-scheme: dark;
+					--vellum: #2E2519;
+					--ink: #E9DDC0;
+					--rule: #6B5A3C;
+					--vermilion: #E2705C;
+				}
+			}
+			body {
+				margin: 0;
+				min-height: 100vh;
+				display: grid;
+				place-content: center;
+				padding: 24px;
+				font: 18px/1.56 'Fraunces', Georgia, serif;
+				background: var(--vellum);
+				color: var(--ink);
+			}
+			main {
+				display: grid;
+				gap: 12px;
+				max-width: 52ch;
+				border-top: 1px solid var(--rule);
+				padding-top: 24px;
+			}
+			h1 {
+				margin: 0;
+				font-size: 34px;
+				line-height: 1.05;
+			}
+			a {
+				color: var(--vermilion);
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>The codex would not open</h1>
+			<p>Error %sveltekit.status%: %sveltekit.error.message%</p>
+			<p><a href='/'>Return to the map</a></p>
+		</main>
+	</body>
+</html>

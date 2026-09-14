@@ -1,91 +1,38 @@
-import { globalStyle, style } from '@vanilla-extract/css'
-
+import { globalStyle } from '@vanilla-extract/css'
+import './fonts.css'
+import { base } from './layers.css'
 import { theme } from './theme.css'
+import { axes, font, space, type } from './tokens'
 
-globalStyle('[hidden]', { display: 'none !important' })
+const inBase = (selector: string, rule: Parameters<typeof globalStyle>[1]) =>
+	globalStyle(selector, { '@layer': { [base]: rule } } as Parameters<typeof globalStyle>[1])
+
+inBase('*, *::before, *::after', { boxSizing: 'border-box' })
+
+inBase('html, body', { minHeight: '100%' })
+
+inBase('body', {
+	margin: 0,
+	background: theme.surround,
+	color: theme.ink,
+	fontFamily: font.fraunces,
+	fontSize: type.base.size,
+	lineHeight: type.base.leading,
+	fontVariationSettings: axes.base,
+	fontWeight: 400,
+	'@supports': { '(text-wrap: pretty)': { textWrap: 'pretty' } }
+})
+
+inBase('a', { color: theme.vermilion, textDecoration: 'none' })
+
+inBase('a:hover', { textDecoration: 'underline', textUnderlineOffset: space[0.75] })
+
+inBase(':focus-visible', { outline: `2px solid ${theme.vermilion}`, outlineOffset: space[0.75] })
+
+inBase('::selection', { background: theme.shade })
 
 globalStyle('*, *::before, *::after', {
-  boxSizing: 'border-box',
-  margin: 0,
-  padding: 0,
-})
-
-globalStyle('html', {
-  overflowX: 'hidden',
-  scrollBehavior: 'smooth',
-  width: '100%',
-})
-
-globalStyle('body', {
-  background: theme.colors.background.root,
-  color: theme.colors.foreground.root,
-  display: 'flex',
-  flexDirection: 'column',
-  fontFamily: theme.typography.fontFamily.body,
-  fontSize: '100%',
-  lineHeight: theme.typography.lineHeight.normal,
-  minHeight: '100vh',
-  MozOsxFontSmoothing: 'grayscale',
-  overflowX: 'hidden',
-  WebkitFontSmoothing: 'antialiased',
-  width: '100%',
-})
-
-globalStyle('h1, h2, h3, h4, h5, h6', {
-  fontFamily: theme.typography.fontFamily.heading,
-  lineHeight: theme.typography.lineHeight.tight,
-  scrollMarginTop: '2rem',
-})
-
-globalStyle('a', {
-  color: theme.colors.brand.dim,
-  textDecoration: 'none',
-})
-
-globalStyle('a:hover', {
-  textDecoration: 'underline',
-})
-
-globalStyle(':focus-visible', {
-  outline: `3px solid ${theme.colors.brand.accent}`,
-  outlineOffset: '2px',
-})
-
-globalStyle(':focus:not(:focus-visible)', {
-  outline: 'none',
-})
-
-globalStyle('strong', {
-  fontWeight: theme.typography.fontWeight.bold,
-})
-
-globalStyle('p br, div br', {
-  content: '\'\'',
-  display: 'block',
-  marginBottom: '8px',
-})
-
-export const skipLink = style({
-  background: theme.colors.brand.accent,
-  borderRadius: `0 0 ${theme.radius.base} ${theme.radius.base}`,
-  color: theme.colors.foreground.root,
-  fontFamily: theme.typography.fontFamily.body,
-  fontSize: '0.95rem',
-  fontWeight: theme.typography.fontWeight.medium,
-  left: '1rem',
-  padding: `${theme.spacing[3]} ${theme.spacing[6]}`,
-  position: 'absolute',
-  selectors: {
-    '&:focus-visible': {
-      textDecoration: 'none',
-      top: '0',
-    },
-  },
-  top: '-100%',
-  transition: `top ${theme.transition.fast}`,
-  zIndex: theme.zIndex.skipLink,
-})
-
-export const mainContent = style({
-  flex: 1,
+	'@media': {
+		'(prefers-reduced-motion: reduce)': { transition: 'none !important', animation: 'none !important' }
+	}
 })

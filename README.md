@@ -1,150 +1,167 @@
 # American Bestiary
 
-A modern bestiary that catalogs the legendary creatures of North America. Where medieval scholars used parchment and allegory, this project applies a pseudo-scientific classification system to document the anatomy, ecology, behavior, and mythology of the continent's most enduring cryptids.
+Fifty cryptids, one per state, catalogued like a medieval bestiary. Each specimen is named, classified, and weighed against the account that produced it; the verdict sits in the margin and sorts the archive.
 
-The site doubles as a working REST and GraphQL API, so the same specimens that appear in the browser can be queried by anyone building against the data.
+## Stack
 
-## Features
-
-- Browseable catalog of cryptids with detail pages, regional grouping, and an archive view
-- REST API with filtering by region and classification, plus pagination
-- GraphQL API backed by the same data layer
-- OpenAPI 3 spec served at `/api/docs`, rendered with Scalar
-- Health check endpoint at `/api/health`
-- Full-text creature search powered by a shared filter utility
-- Type-safe data model shared between server, client, and tests
-- Containerized dev environment and reproducible cloud infrastructure
-
-## Tech Stack
-
-### Application
-- **[SvelteKit](https://kit.svelte.dev)** (Svelte 5) for routing, SSR, and the API layer
-- **[TypeScript](https://www.typescriptlang.org)** across the entire codebase
-- **[Vanilla Extract](https://vanilla-extract.style)** for type-safe, zero-runtime CSS with design tokens
-- **[GraphQL Yoga](https://the-guild.dev/graphql/yoga-server)** for the GraphQL endpoint
-- **[Scalar](https://scalar.com)** for interactive API reference docs
-
-### Data
-- **[MongoDB](https://www.mongodb.com)** as the primary datastore, accessed through the official Node driver
-- A `seed` script (`pnpm seed`) populates the database from the local fixtures in `src/lib/data`
-
-### Tooling
-- **[Vite](https://vite.dev)** for dev server and builds
-- **[Vitest](https://vitest.dev)** for unit tests
-- **[Playwright](https://playwright.dev)** for end-to-end tests
-- **[ESLint](https://eslint.org)** with `typescript-eslint`, `eslint-plugin-svelte`, and `eslint-plugin-perfectionist`
-- **[svelte-check](https://www.npmjs.com/package/svelte-check)** for Svelte and TypeScript diagnostics
-- **[pnpm](https://pnpm.io)** as the package manager
-
-### Infrastructure
-- **[Netlify](https://www.netlify.com)** hosts the deployed site via `@sveltejs/adapter-netlify`
-- **[Docker](https://www.docker.com)** + Compose provide a reproducible local environment
-- **[Terraform](https://www.terraform.io)** provisions the MongoDB Atlas cluster and Netlify site as code
-
-## Project Layout
+- **SvelteKit 2** and **Svelte 5** on **Netlify** through `@sveltejs/adapter-netlify`
+- **Postgres** through **Drizzle ORM** and `node-postgres`; Netlify DB in production, migrations applied before every build
+- The fifty original plates in `static/images`, served unaltered; the **Netlify Image CDN** makes the small and medium sizes on request, and plates uploaded in the admin go to **Netlify Blobs**
+- **Vanilla Extract** for styles: primitives in `tokens.ts`, roles in `theme.css.ts`
+- **Zod** at every boundary, **Scalar** for the API reference
+- **Biome**, **svelte-check**, **knip**, **jscpd**, **Vitest**, **Playwright** with **axe**
 
 ```
 src/
+  hooks.server.ts         admin guard by route id, security headers
+  error.html              static fallback page (values mirrored from tokens, test-guarded)
   lib/
-    components/   Svelte components (elements, sections, pages)
-    data/         Static seed data and content for the home and archive pages
-    server/       MongoDB client, REST handlers, GraphQL schema and resolvers, OpenAPI spec
-    styles/       Vanilla Extract themes, tokens, and global styles
-    types/        Shared TypeScript types
-    utils/        Shared utilities (e.g. creature filtering)
+    assets/us-map.json    the map, cleaned from the source SVG
+    archive.ts            archive filtering, grouping, query strings
+    codex.ts              codex order, alt text, territory slugs
+    enums.ts              kinds, statuses, rubrics, the fifty territories
+    revisions.ts          field-level snapshot diffs
+    schemas.ts            every Zod schema
+    labels/               interface labels, defaults, and editable overrides
+    components/
+      elements/           Text, Button, Plate, SpecimenCard, Gloss, FilterRow, ...
+      layout/             AppShell, Header, ThemeColor, Footer, Seo, ...
+      sections/           Incipit, TerritoryMap, Specimen, MonthlyTheme, Entry*
+      pages/              HomePage, ArchivePage, EntryPage, ErrorPage
+      admin/              dashboard charts, editors, revision history
+    server/
+      db/                 schema, queries, content writes with revisions, snapshots
+      auth/               scrypt passwords, sessions, HMAC'd rate limits
+      http/               cache headers, form parsing, _headers parsing
+      media/              Netlify Blobs storage
+      analytics/          dashboard queries and mock data
+      api.ts, openapi.ts  public API serialisation and the OpenAPI document
   routes/
-    api/          REST, GraphQL, OpenAPI docs, and health endpoints
-    archives/     Archive index and per-region pages
-    creatures/    Catalog index and per-creature detail pages
-scripts/          Database seed script
-terraform/        Infrastructure as code for MongoDB Atlas and Netlify
+    (site)/               map, archives, creatures/[slug]
+    admin/                dashboard, specimens, themes, globals, preview
+    api/                  creatures, themes/current, health, docs, openapi.json, event
+drizzle/                  generated migrations
+netlify/functions/        monthly cache purge for the theme of the month
+scripts/
+  seed.ts                 content seed (localhost only without --force-production)
+  seed-content/           the fifty specimens, twelve themes, and site settings
+  set-password.ts         reset an admin password and sign out its sessions
+static/images/            the fifty original plates, served unaltered
+static/fonts/             Fraunces variable fonts (roman and italic), full axes
 tests/
-  unit/           Vitest unit tests
-  e2e/            Playwright end-to-end tests with page objects and fixtures
+  setup/, helpers/        database reset, factories, request helpers
+  component/              jsdom component tests
+  integration/            database-backed tests
+  e2e/                    Playwright specs and the preview server
 ```
 
-## Getting Started
+## Local setup
 
-### Prerequisites
-- Node.js 22
-- pnpm
-- A MongoDB connection string (local or Atlas)
+Requires Node 24 and pnpm, plus Docker for Postgres.
 
-### Install
-```sh
+```bash
+docker run -d --name bestiary-pg -e POSTGRES_PASSWORD=postgres \
+  -e POSTGRES_DB=bestiary -p 5434:5432 postgres:16
+cp .env.example .env    # fill in the values below
 pnpm install
+pnpm db:migrate
+pnpm db:seed
+pnpm dev                # http://localhost:5173
 ```
 
-### Configure
-Copy `.env.example` to `.env` and fill in your MongoDB connection string:
+The first sign-in at `/admin/login` with `ADMIN_EMAIL` and `ADMIN_PASSWORD` creates the admin account.
 
-```sh
-cp .env.example .env
-```
+## Environment
 
-`MONGODB_URI` is the only required variable. The database name (`bestiary`) and collection (`creatures`) are set in `src/lib/server/db.ts`.
-
-### Seed the database
-```sh
-pnpm seed
-```
-
-### Run the dev server
-```sh
-pnpm dev
-```
-
-### Run with Docker
-```sh
-docker compose up
-```
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `DATABASE_URL` | yes | Postgres connection string. Tests derive `<name>_test` and `<name>_e2e` from it. For a hosted database, require TLS (for example `?sslmode=verify-full`). |
+| `APP_SECRET` | yes | At least 32 characters. Keys the HMAC on rate-limit client addresses. |
+| `ADMIN_EMAIL` | first run | Email of the admin created on the first sign-in. Remove it once that account exists. |
+| `ADMIN_PASSWORD` | first run | At least 12 characters. Remove it once that account exists; change the password with `pnpm set-password`. |
+| `VITE_IMAGE_CDN` | set in `netlify.toml` | `true` routes plates through `/.netlify/images`. |
 
 ## Scripts
 
-| Command | Description |
+| Script | What it does |
 | --- | --- |
-| `pnpm dev` | Start the SvelteKit dev server |
-| `pnpm build` | Build for production |
-| `pnpm preview` | Preview the production build |
-| `pnpm check` | Run `svelte-check` and TypeScript diagnostics |
-| `pnpm lint` | Run ESLint |
-| `pnpm lint:fix` | Run ESLint with autofix |
-| `pnpm test` | Run unit tests with Vitest |
-| `pnpm test:watch` | Run unit tests in watch mode |
-| `pnpm test:e2e` | Run Playwright end-to-end tests |
-| `pnpm seed` | Seed MongoDB from local fixtures |
+| `pnpm dev` | Development server |
+| `pnpm build` / `pnpm preview` | Production build and local preview |
+| `pnpm check` | `svelte-kit sync` and `svelte-check` |
+| `pnpm lint` / `pnpm lint:fix` | Biome |
+| `pnpm knip` | Unused files, exports, and dependencies |
+| `pnpm dup` | jscpd duplication check |
+| `pnpm db:generate` | Generate a migration from `src/lib/server/db/schema.ts` |
+| `pnpm db:migrate` | Apply migrations |
+| `pnpm db:seed` | Replace specimens, themes, settings, and their revisions |
+| `pnpm set-password <email>` | Set an admin password and end that user's sessions |
+| `pnpm test` | All Vitest projects |
+| `pnpm test:unit` / `test:component` / `test:integration` | One Vitest project |
+| `pnpm test:coverage` | Vitest with coverage thresholds |
+| `pnpm test:e2e` | Build, then Playwright |
+| `pnpm verify` | Lint, check, knip, dup, coverage, and e2e |
 
-## API
+## Tests
 
-### REST
-- `GET /api/creatures` — list creatures, with optional `region`, `classification`, `limit`, and `page` query parameters
-- `POST /api/creatures` — create a creature (`name`, `region`, and `abstract` are required)
-- `GET /api/creatures/[id]` — fetch a single creature
-- `PATCH /api/creatures/[id]` — update a creature
-- `DELETE /api/creatures/[id]` — remove a creature
-- `GET /api/health` — service health check
-- `GET /api/docs` — OpenAPI 3 specification
+- **Unit** tests sit beside their source as `*.test.ts`; DOM-dependent ones are `*.dom.test.ts`.
+- **Component** tests render Svelte components in jsdom.
+- **Integration** tests run against a real Postgres database that is reset and migrated before the run and truncated before each test.
+- **End to end** tests build the site, reset and seed an `_e2e` database, start a Netlify Blobs emulator with the plates, and run Playwright across Chromium, Firefox, WebKit, a Pixel 7, and an iPhone 14. Public and admin pages are checked with axe at WCAG 2.2 AA in light and dark.
 
-### GraphQL
-- `POST /api/graphql` — GraphQL endpoint backed by the same data layer as the REST API
+Coverage thresholds for `src/**/*.ts`: 100% lines and functions, 99% statements, 90% branches.
 
-## Testing
+## CI and deploys
 
-Unit tests live in `tests/unit` and run under Vitest. End-to-end tests live in `tests/e2e` and use Playwright with a page object pattern and shared fixtures.
+GitHub Actions runs lint, check, knip, dup, a check that the committed migrations match the schema, coverage, and the Playwright suite against a Postgres service.
 
-```sh
-pnpm test
-pnpm test:e2e
-```
+Netlify builds from the repository. Only production builds run migrations (`[context.production]` in `netlify.toml`), and they stop if `DATABASE_URL` is missing. Deploy previews and branch deploys only build, so give those contexts their own `DATABASE_URL` or they read and write production content. Keep migrations backward compatible, because they run before the new code goes live.
 
-## Deployment
+First production deploy:
 
-The site is deployed to Netlify via `@sveltejs/adapter-netlify`. The MongoDB Atlas cluster and Netlify site are both managed in `terraform/`, so the entire production environment can be recreated from source.
+1. Create the Postgres database and set `DATABASE_URL` for both builds and functions in the site's environment variables. If Netlify's database integration provides `NETLIFY_DATABASE_URL`, copy its value into `DATABASE_URL`.
+2. Set `APP_SECRET` to at least 32 random characters. Sign-in and analytics refuse to run without it.
+3. Set `ADMIN_EMAIL` and `ADMIN_PASSWORD`, deploy, sign in once at `/admin/login` to create the account, then remove both variables.
+4. Load the content into the new database: `DATABASE_URL=... pnpm db:seed --force-production`.
+5. Netlify Blobs and the Image CDN need no setup.
 
-## Credits
+To change the admin password later, run `DATABASE_URL=... pnpm set-password <email>`, which also ends that account's sessions.
 
-- Concept and illustrations from [The American Bestiary](https://tavomontanez.art/the-american-bestiary)
+Public pages are cached at the edge with the `content` tag. Admin saves purge it, and a scheduled function purges it on the first of each month so the theme of the month changes on time.
 
-## License
+## Admin
 
-MIT
+`/admin` is guarded by the resolved route id, and every form action checks the session again.
+
+- **Dashboard.** Visits, entry views, and outbound clicks, with a table view for every chart.
+- **Specimens.** The fifty, grouped by kind and sortable. Each editor covers every field, the plate, publishing, a preview of unpublished entries, and revision history with a field-level diff and restore. The roster is fixed: there is no create or delete.
+- **Themes.** Twelve months, each with a title, description, and four specimen slots with a note per slot.
+- **Globals.** Site name, tagline, incipit, footer credit, and every interface label.
+
+Every save writes a revision with its author.
+
+## Theming
+
+Colors are primitives in `src/lib/styles/tokens.ts` and roles in `src/lib/styles/theme.css.ts`. No hex value appears anywhere else, and a test enforces it (the static `src/error.html` mirrors the tokens and is checked against them).
+
+The site follows the reader's operating system setting. Light and dark are the same roles assigned twice in `theme.css.ts`, switched by `prefers-color-scheme`, so there is no toggle, no cookie, no script, and nothing stored in the browser.
+
+## Analytics and privacy
+
+Google Tag Manager (container `GTM-5F34B659`, the same container as the previous site) loads on public pages from `src/app.html`. It never loads on admin pages: `hooks.server.ts` strips the marked tag block from every `/admin` response. The content security policy in `svelte.config.js` allows its loader script by hash and the Google Tag Manager and Google Analytics domains it needs.
+
+The admin dashboard reads its own first-party beacons: page views and outbound link clicks are sent to `/api/event`. Those beacons set no cookie, honour Do Not Track, ignore bots, and reduce referrers to their host. IP addresses are never stored; the rate limiter keeps only an HMAC of the address that expires with its window.
+
+## Security
+
+- Content Security Policy in hash mode, with security headers from `_headers` applied to rendered responses too.
+- Admin sessions use a random token stored only as a SHA-256 digest, in an `__Host-` cookie that is HttpOnly, Secure, and SameSite=Strict, with idle and absolute expiry.
+- Passwords are hashed with scrypt. Failed sign-ins are limited per network (IPv4 address or IPv6 /64), and repeated failures for one account slow every attempt down instead of locking the account, so nobody can lock the admin out.
+- Analytics beacons are limited per network and overall, and events older than 13 months are deleted.
+- Uploads are identified by their bytes, not their declared type, and served with a sandboxing CSP. A replaced plate stays in Blobs under its random key so an earlier revision can restore it.
+- The public API is read-only and never returns unpublished specimens.
+
+## Credits and licensing
+
+Illustrations by [Tavo Montañez](https://tavomontanez.art/the-american-bestiary), from *The American Bestiary*. They are his work and are **not** covered by this repository's license.
+
+The source code is MIT licensed. The license excludes `static/images/` and every image in the repository; see [LICENSE](LICENSE).

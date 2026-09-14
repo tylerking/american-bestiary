@@ -1,42 +1,32 @@
 <script
-  lang='ts'>
-  import { page } from '$app/stores'
-  import Container from '$lib/components/elements/Container/Container.svelte'
-  import Link from '$lib/components/elements/Link/Link.svelte'
-  import Typography from '$lib/components/elements/Typography/Typography.svelte'
-  import * as styles from '$lib/styles/error.css'
+	lang='ts'>
+	import { page } from '$app/state'
+	import { SITE_NAME } from '$lib/codex'
+	import AppShell from '$lib/components/layout/AppShell'
+	import Footer from '$lib/components/layout/Footer'
+	import SiteNavigation from '$lib/components/layout/SiteNavigation'
+	import ErrorPage from '$lib/components/pages/ErrorPage'
+	import { DEFAULT_LABELS } from '$lib/labels/label-defaults'
+	import { setLabels } from '$lib/labels/labels'
+	import type { SiteSettings } from '$lib/types'
+
+	const settings = $derived(page.data.settings as SiteSettings | undefined)
+
+	setLabels(() => settings?.labels ?? DEFAULT_LABELS)
 </script>
 
-<Container
-  class={styles.root}>
-  <Typography
-    class={styles.code}
-    tag='p'
-    variant='h1'>{$page.status}</Typography>
-  <Typography
-    tag='h1'
-    variant='h2'>
-    {#if $page.status === 404}
-      This creature hasn't been documented yet
-    {:else}
-      Something went wrong in the archives
-    {/if}
-  </Typography>
-  <Typography
-    class={styles.message}
-    tag='p'
-    variant='body'>
-    {#if $page.status === 404}
-      The specimen you're looking for doesn't exist in our records. It may have been misclassified or lost to history.
-    {:else}
-      {$page.error?.message || 'An unexpected error occurred while consulting the archives.'}
-    {/if}
-  </Typography>
-  <nav
-    class={styles.links}>
-    <Link
-      href='/'>Return to the map</Link>
-    <Link
-      href='/archives'>Browse the archives</Link>
-  </nav>
-</Container>
+<AppShell
+	siteName={settings?.siteName ?? SITE_NAME}
+	tagline={settings?.tagline}>
+	{#snippet actions()}
+		<SiteNavigation />
+	{/snippet}
+	{#snippet footer()}
+		{#if settings}
+			<Footer
+				{settings} />
+		{/if}
+	{/snippet}
+	<ErrorPage
+		status={page.status} />
+</AppShell>

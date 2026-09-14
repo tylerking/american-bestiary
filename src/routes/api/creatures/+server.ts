@@ -1,41 +1,23 @@
-import type { CreateCreatureInput } from '$lib/types'
-
 import { json } from '@sveltejs/kit'
-import { create, findAll } from '$lib/server/creatures'
-
+import { apiListSchema } from '$lib/schemas'
+import { API_HEADERS, apiError, publicSpecimen } from '$lib/server/api'
+import { listSpecimens } from '$lib/server/db/queries'
 import type { RequestHandler } from './$types'
 
 export const GET: RequestHandler = async ({ url }) => {
-  const region = url.searchParams.get('region') ?? undefined
-  const classification = url.searchParams.get('classification') ?? undefined
-  const limit = Number(url.searchParams.get('limit')) || 100
-  const page = Number(url.searchParams.get('page')) || 1
-
-  const creatures = await findAll({ classification, limit, page, region })
-  return json(creatures)
-}
-
-export const POST: RequestHandler = async ({ request }) => {
-  const body = (await request.json()) as CreateCreatureInput
-
-  if (!body.name || !body.region || !body.abstract) {
-    return json({ error: 'name, region, and abstract are required' }, { status: 400 })
-  }
-
-  const creature = await create({
-    abstract: body.abstract,
-    anatomy: body.anatomy,
-    behavior: body.behavior,
-    classification: body.classification,
-    color: body.color,
-    ecology: body.ecology,
-    etymology: body.etymology,
-    mythology: body.mythology,
-    name: body.name,
-    region: body.region,
-    source: body.source,
-    visual: body.visual,
-  })
-
-  return json(creature, { status: 201 })
+	const parsed = apiListSchema.safeParse(Object.fromEntries(url.searchParams))
+	if (!parsed.success) {
+		const issue = parsed.error.issues[0]
+		return apiError(400, `${issue?.path.join('.') || 'query'}: ${issue?.message ?? 'invalid'}`)
+	}
+	const { data, total } = await listSpecimens(parsed.data)
+	return json(
+		{
+			data: data.map((specimen) => publicSpecimen(specimen, url.origin)),
+			page: parsed.data.page,
+			limit: parsed.data.limit,
+			total
+		},
+		{ headers: API_HEADERS }
+	)
 }

@@ -1,26 +1,39 @@
 import { defineConfig, devices } from '@playwright/test'
+import { BASE_URL } from './tests/e2e/env'
+
+const CI = !!process.env.CI
+const PUBLIC = /public\.spec\.ts/
+const READ_ONLY = /(public|security)\.spec\.ts/
+const BROWSERS = ['chromium', 'firefox', 'webkit', 'pixel-7', 'iphone-14']
 
 export default defineConfig({
-  forbidOnly: !!process.env.CI,
-  fullyParallel: true,
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'mobile-chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-  ],
-  retries: process.env.CI ? 2 : 0,
-  testDir: 'tests/e2e',
-  use: {
-    baseURL: 'http://localhost:4173',
-  },
-  webServer: {
-    command: 'pnpm build && pnpm preview',
-    port: 4173,
-    reuseExistingServer: !process.env.CI,
-  },
+	testDir: 'tests/e2e',
+	fullyParallel: true,
+	forbidOnly: CI,
+	retries: CI ? 2 : 0,
+	workers: CI ? 2 : undefined,
+	reporter: CI ? [['github'], ['html', { open: 'never' }]] : 'list',
+	use: { baseURL: BASE_URL, trace: 'retain-on-failure' },
+	webServer: {
+		command: 'tsx tests/e2e/serve.ts',
+		url: BASE_URL,
+		reuseExistingServer: false,
+		timeout: 120_000
+	},
+	projects: [
+		{ name: 'setup', testMatch: /\.setup\.ts/, use: devices['Desktop Chrome'] },
+		{ name: 'chromium', testMatch: READ_ONLY, use: devices['Desktop Chrome'] },
+		{ name: 'firefox', testMatch: PUBLIC, use: devices['Desktop Firefox'] },
+		{ name: 'webkit', testMatch: PUBLIC, use: devices['Desktop Safari'] },
+		{ name: 'pixel-7', testMatch: PUBLIC, use: devices['Pixel 7'] },
+		{ name: 'iphone-14', testMatch: PUBLIC, use: devices['iPhone 14'] },
+		// The admin specs change shared content, so they run alone after every read-only project has finished.
+		{
+			name: 'admin',
+			testMatch: /admin\.spec\.ts/,
+			fullyParallel: false,
+			use: devices['Desktop Chrome'],
+			dependencies: ['setup', ...BROWSERS]
+		}
+	]
 })

@@ -1,50 +1,15 @@
-# Dependencies
-node_modules/
-
-# Build output
-.svelte-kit/
-.netlify/
 build/
-dist/
-coverage/
+node_modules/
+.netlify/
+.svelte-kit/
 
-# Environment
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
-# OS
 .DS_Store
-*~
+*.log
 
-# Editor
-.idea/
-.vscode/
-*.sublime-project
-*.sublime-workspace
-*.swp
-*.swo
-*.iml
-
-# Logs
-*.log*
-
-# TypeScript
-*.tsbuildinfo
-
-# Terraform
-terraform/.terraform/
-terraform/*.tfstate
-terraform/*.tfstate.backup
-terraform/*.tfvars
-terraform/.terraform.lock.hcl
-
-# Playwright
+coverage/
 test-results/
 playwright-report/
-
-# Misc
-__benchmarks__
-.module-cache
-chrome-user-data
-plan/
