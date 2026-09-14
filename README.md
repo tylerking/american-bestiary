@@ -47,7 +47,7 @@ scripts/
   seed-content/           the fifty specimens, twelve themes, and site settings
   set-password.ts         reset an admin password and sign out its sessions
 static/images/            the fifty original plates, served unaltered
-static/fonts/             Fraunces variable fonts (roman and italic), full axes
+static/fonts/             Fraunces variable fonts (roman and italic), full axes; the site serves the -Latin subsets
 tests/
   setup/, helpers/        database reset, factories, request helpers
   component/              jsdom component tests

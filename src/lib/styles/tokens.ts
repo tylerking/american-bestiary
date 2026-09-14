@@ -56,8 +56,8 @@ export const font = {
 } as const
 
 export const fontFile = {
-	frauncesRoman: '/fonts/Fraunces-Variable.woff2',
-	frauncesItalic: '/fonts/Fraunces-Italic-Variable.woff2'
+	frauncesRoman: '/fonts/Fraunces-Variable-Latin.woff2',
+	frauncesItalic: '/fonts/Fraunces-Italic-Variable-Latin.woff2'
 } as const
 
 export const axes = {
